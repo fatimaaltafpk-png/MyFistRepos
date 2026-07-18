@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Skills - Arbaaz Ali</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>My Skills 💡</h1>
+  <ul style="list-style:none; font-size:1.2em;">
+    <li>✔ Content Creation (Posts, Reels, Carousels)</li>
+    <li>✔ Copywriting (Captions & Ads)</li>
+    <li>✔ Strategy Development (Campaign Planning)</li>
+    <li>✔ Advertising (Facebook & Instagram Ads)</li>
+    <li>✔ Analytics & Reporting (Engagement, ROI)</li>
+    <li>✔ Brand Building (Theme & Identity)</li>
+    <li>✔ Community Engagement (Comments & DMs)</li>
+    <li>✔ Lead Generation (Organic + Paid)</li>
+  </ul>
+  <a href="index.html">Back to Home</a>
+</body>
+</html>
