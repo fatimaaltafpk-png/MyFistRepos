@@ -104,5 +104,26 @@ button:hover, .btn:hover {
     <a href="https://linkedin.com" target="_blank">LinkedIn</a>
   </p>
 </footer>
+/* Footer Styling */
+footer {
+  background: #f9f9f9;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+footer a {
+  color: #0073e6;
+  text-decoration: none;
+  margin: 0 5px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
 
 
