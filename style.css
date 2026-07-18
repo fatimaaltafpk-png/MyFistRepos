@@ -122,7 +122,10 @@ footer a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(to right, #eaf4ff, #ffffff);
+ background: url("images/hero-bg.jpg");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
 }
 
 .hero h1 {
