@@ -158,6 +158,11 @@ background-repeat: no-repeat;
     text-align:left;
     padding:50px;
 }
-
+.logo{
+    color:#0073e6;
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
 
 
