@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arbaaz Ali Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body style="text-align:center;">
+  <h1>Hi, I’m Arbaaz Ali 🌟</h1>
+  <p>Social Media Marketing Expert — Content, Ads & Analytics</p>
+  <a href="about.html">Learn More About Me</a>
+</body>
+</html>
