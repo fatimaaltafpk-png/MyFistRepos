@@ -153,6 +153,11 @@ background-repeat: no-repeat;
 .hero .btn:hover {
   background: #005bb5;
 }
+.hero-content{
+    width:50%;
+    text-align:left;
+    padding:50px;
+}
 
 
 
