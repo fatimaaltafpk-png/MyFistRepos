@@ -52,3 +52,23 @@ button, .btn {
 button:hover, .btn:hover {
   background: #005bb5;
 }
+/* Project Cards */
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  color: #0073e6;
+}
+
+.card p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
