@@ -128,19 +128,18 @@ background: url("hero-bg.jpg.jpeg");
 background-position: center;
 background-repeat: no-repeat;
 }
-
 .hero h1 {
-  font-size: 48px;
-  color: #0073e6;
+  font-size: 52px;
+  color: white;
   margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
 }
-
 .hero p {
   font-size: 22px;
-  color: #555;
+  color: white;
   margin-bottom: 30px;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
 }
-
 .hero .btn {
   display: inline-block;
   background: #0073e6;
