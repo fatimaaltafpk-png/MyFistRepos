@@ -122,8 +122,8 @@ footer a:hover {
 .hero {
   text-align: center;
   padding: 80px 20px;
- background: url("images/hero-bg.jpg");
-background-size: cover;
+background: url("hero-bg.jpg.jpeg");
+  background-size: cover;
 background-position: center;
 background-repeat: no-repeat;
 }
