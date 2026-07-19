@@ -82,3 +82,47 @@
         </div>
     </div>
 </section>
+<!-- SIRF BACKGROUND - BINA TEXT KE -->
+<style>
+    .bg-only {
+        width: 100%;
+        height: 500px;
+        background: #2b3247;
+        position: relative;
+        overflow: hidden;
+    }
+    .bg-only::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 55%;
+        background: radial-gradient(ellipse at 70% 50%, 
+                    rgba(70, 110, 160, 0.5) 0%, 
+                    rgba(43, 50, 71, 0) 70%);
+    }
+    .bg-only .c1 {
+        width: 600px;
+        height: 600px;
+        right: -100px;
+        top: -200px;
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(80, 140, 210, 0.15), transparent);
+    }
+    .bg-only .c2 {
+        width: 400px;
+        height: 400px;
+        right: 20%;
+        bottom: -150px;
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(60, 120, 200, 0.1), transparent);
+    }
+</style>
+
+<section class="bg-only">
+    <div class="c1"></div>
+    <div class="c2"></div>
+</section>
