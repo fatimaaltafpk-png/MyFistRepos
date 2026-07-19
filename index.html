@@ -75,93 +75,22 @@
         <div class="c-hero__cta">
             <form class="c-hero__cta__form" role="search">
                 <div class="c-searchGroup">
-                    <input type="text" class="c-searchGroup__input" placeholder="[Placeholder Text]">
-                    <button type="submit" class="c-searchGroup__button">[Button Text]</button>
+                    <input type="text" class="c-searchGroup__input" placeholder="Lets build Your Brand">
+                    <button type="submit" class="c-searchGroup__button">Show my work</button>
                 </div>
             </form>
         </div>
     </div>
 </section>
-<!DOCTYPE html>
-<html>
-<head>
-<style>
-  .hero-bg {
+.bg-container {
     width: 100%;
     min-height: 500px;
-    position: relative;
-    background: #2b3247;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding: 60px 40px;
-  }
-
-  /* The gradient overlay on the right side */
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    background: radial-gradient(ellipse at 70% 50%, 
-                rgba(70, 110, 160, 0.6) 0%, 
-                rgba(43, 50, 71, 0) 70%);
-    pointer-events: none;
-  }
-
-  /* Optional: abstract shapes like the original */
-  .hero-bg .shape {
-    position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.03);
-    pointer-events: none;
-  }
-
-  .hero-bg .shape-1 {
-    width: 600px;
-    height: 600px;
-    right: -100px;
-    top: -200px;
-    background: radial-gradient(circle, rgba(80, 140, 210, 0.15), transparent);
-  }
-
-  .hero-bg .shape-2 {
-    width: 400px;
-    height: 400px;
-    right: 20%;
-    bottom: -150px;
-    background: radial-gradient(circle, rgba(60, 120, 200, 0.1), transparent);
-  }
-
-  /* Content on top */
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    max-width: 600px;
-  }
-
-  .hero-content h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin: 0 0 10px 0;
-  }
-
-  .hero-content p {
-    font-size: 18px;
-    opacity: 0.9;
-    line-height: 1.6;
-  }
-</style>
-</head>
-<body>
-
-<div class="hero-bg">
-  <!-- Decorative shapes -->
-  <div class="shape shape-1"></div>
-  <div class="shape shape-2"></div>
-
-</body>
-</html>
+    background-color: #2b3247;
+    background-image: linear-gradient(135deg, 
+                        rgba(43, 50, 71, 0) 0%, 
+                        rgba(43, 50, 71, 0.3) 30%, 
+                        rgba(59, 130, 200, 0.25) 60%, 
+                        rgba(70, 150, 220, 0.35) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
