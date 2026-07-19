@@ -1,799 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <style>
-        /* ===== RESET & BASE ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body
-        [ font-family: 'Inter', sans-serif;
-            background: #f8faff;
-            color: #1a1a2e;
-            line-height: 1.6;
-        ]
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* ===== TOP BAR (Guru.com style) ===== */
-        .top-bar {
-            background: #0f0f1a;
-            color: #aaa;
-            padding: 0.5rem 0;
-            font-size: 0.85rem;
-            border-bottom: 2px solid #00d4ff;
-        }
-
-        .top-bar .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .top-bar a {
-            color: #ccc;
-            margin-left: 1.5rem;
-            transition: color 0.3s;
-        }
-
-        .top-bar a:hover {
-            color: #00d4ff;
-        }
-
-        .top-bar .trust-badge {
-            color: #00d4ff;
-            font-weight: 600;
-        }
-
-        .top-bar .trust-badge i {
-            margin-right: 0.3rem;
-        }
-
-        /* ===== HEADER / NAV ===== */
-        header {
-            background: #ffffff;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e8ecf1;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #0f0f1a;
-        }
-
-        .logo span {
-            color: #00d4ff;
-        }
-
-        .logo small {
-            display: block;
-            font-size: 0.7rem;
-            font-weight: 400;
-            color: #666;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: #333;
-            font-weight: 500;
-            transition: color 0.3s;
-            font-size: 0.95rem;
-        }
-
-        .nav-links a:hover {
-            color: #00d4ff;
-        }
-
-        .nav-cta {
-            background: #0f0f1a;
-            color: #fff !important;
-            padding: 0.6rem 1.8rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .nav-cta:hover {
-            background: #00d4ff;
-            color: #0f0f1a !important;
-            transform: translateY(-2px);
-        }
-
-        /* ===== HERO SECTION ===== */
-        .hero {
-            padding: 5rem 0 4rem;
-            background: linear-gradient(135deg, #f8faff 0%, #eef3ff 100%);
-        }
-
-        .hero .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content .badge {
-            display: inline-block;
-            background: #00d4ff22;
-            color: #00a3cc;
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            border: 1px solid #00d4ff44;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content .hook {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #00a3cc;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            line-height: 1.15;
-            margin-bottom: 1.2rem;
-            color: #0f0f1a;
-        }
-
-        .hero-content h1 .highlight {
-            background: linear-gradient(135deg, #00d4ff, #0077b6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-content .sub-headline {
-            font-size: 1.25rem;
-            color: #444;
-            margin-bottom: 2rem;
-            line-height: 1.7;
-            max-width: 550px;
-        }
-
-        .hero-content .sub-headline strong {
-            color: #0f0f1a;
-        }
-
-        .cta-group {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-bottom: 2.5rem;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: #0f0f1a;
-            color: #fff;
-            padding: 1rem 2.8rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-primary:hover {
-            background: #00d4ff;
-            color: #0f0f1a;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 212, 255, 0.35);
-        }
-
-        .btn-secondary {
-            display: inline-block;
-            background: transparent;
-            color: #0f0f1a;
-            padding: 1rem 2.8rem;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            border: 2px solid #d0d7e2;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            border-color: #0f0f1a;
-            background: #0f0f1a;
-            color: #fff;
-            transform: translateY(-3px);
-        }
-
-        .trust-stats {
-            display: flex;
-            gap: 3rem;
-            border-top: 1px solid #d0d7e2;
-            padding-top: 2rem;
-        }
-
-        .trust-stats .stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .trust-stats .stat .number {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: #0f0f1a;
-        }
-
-        .trust-stats .stat .label {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .trust-stats .stat .label i {
-            color: #00d4ff;
-            margin-right: 0.3rem;
-        }
-
-        /* Hero Image / Avatar */
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-visual .avatar-wrapper {
-            background: linear-gradient(135deg, #00d4ff, #0077b6);
-            border-radius: 50%;
-            padding: 6px;
-            width: 380px;
-            height: 380px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.25);
-        }
-
-        .hero-visual .avatar-wrapper .avatar {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: #f8faff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 8rem;
-            font-weight: 900;
-            color: #0f0f1a;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100"><circle cx="50" cy="40" r="25" fill="%23e0e7f0"/><circle cx="50" cy="90" r="35" fill="%23e0e7f0"/></svg>');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            padding-bottom: 1rem;
-            color: #0f0f1a;
-            font-size: 2rem;
-        }
-
-        /* If you have a real photo, replace the background-image above with: */
-        /* background-image: url('your-photo.jpg'); */
-
-        /* ===== FEATURES / SERVICES SECTION (Guru-style) ===== */
-        .features {
-            padding: 5rem 0;
-            background: #ffffff;
-        }
-
-        .features .section-label {
-            text-align: center;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #00a3cc;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .features h2 {
-            text-align: center;
-            font-size: 2.6rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-            color: #0f0f1a;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-        }
-
-        .feature-card {
-            background: #f8faff;
-            padding: 2.5rem 2rem;
-            border-radius: 20px;
-            border: 1px solid #e8ecf1;
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: #00d4ff;
-            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.08);
-        }
-
-        .feature-card .icon {
-            font-size: 2.8rem;
-            color: #00d4ff;
-            margin-bottom: 1.2rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.6rem;
-        }
-
-        .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
-        }
-
-        /* ===== TESTIMONIALS (Trust signal) ===== */
-        .testimonials {
-            padding: 5rem 0;
-            background: #f8faff;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.4rem;
-            font-weight: 800;
-            margin-bottom: 3rem;
-        }
-
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .testimonial-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 16px;
-            border: 1px solid #e8ecf1;
-        }
-
-        .testimonial-card .stars {
-            color: #fbbf24;
-            margin-bottom: 0.8rem;
-        }
-
-        .testimonial-card blockquote {
-            font-style: italic;
-            color: #333;
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-card .client {
-            font-weight: 600;
-            color: #0f0f1a;
-        }
-
-        .testimonial-card .client span {
-            font-weight: 400;
-            color: #888;
-            font-size: 0.9rem;
-        }
-
-        /* ===== CTA BANNER ===== */
-        .cta-banner {
-            padding: 4rem 0;
-            background: linear-gradient(135deg, #0f0f1a, #1a1a3e);
-            text-align: center;
-        }
-
-        .cta-banner h2 {
-            color: #fff;
-            font-size: 2.6rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .cta-banner p {
-            color: #aaa;
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-banner .btn-primary {
-            background: #00d4ff;
-            color: #0f0f1a;
-            box-shadow: 0 8px 30px rgba(0, 212, 255, 0.3);
-        }
-
-        .cta-banner .btn-primary:hover {
-            background: #fff;
-            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px);
-        }
-
-        /* ===== FOOTER (Guru.com style) ===== */
-        footer {
-            background: #0f0f1a;
-            color: #888;
-            padding: 3rem 0 1.5rem;
-            border-top: 2px solid #00d4ff;
-        }
-
-        footer .container {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 2rem;
-        }
-
-        footer h4 {
-            color: #fff;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-
-        footer ul {
-            list-style: none;
-        }
-
-        footer ul li {
-            margin-bottom: 0.6rem;
-        }
-
-        footer ul a {
-            color: #888;
-            transition: color 0.3s;
-        }
-
-        footer ul a:hover {
-            color: #00d4ff;
-        }
-
-        footer .footer-bottom {
-            grid-column: 1 / -1;
-            border-top: 1px solid #2a2a40;
-            padding-top: 1.5rem;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 992px) {
-            .hero .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content .sub-headline {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .trust-stats {
-                justify-content: center;
-            }
-
-            .cta-group {
-                justify-content: center;
-            }
-
-            .hero-visual .avatar-wrapper {
-                width: 260px;
-                height: 260px;
-            }
-
-            footer .container {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.4rem;
-            }
-
-            .top-bar .container {
-                justify-content: center;
-                gap: 0.5rem;
-            }
-
-            .top-bar .trust-badge {
-                width: 100%;
-                text-align: center;
-            }
-
-            footer .container {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        /* Mobile menu toggle (simple) */
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #0f0f1a;
-        }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Brand · Aura</title>
+  <!-- Font & basic reset for clean demo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: #faf9fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 1.5rem;
+    }
+
+    .o-container {
+      max-width: 1280px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 2.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      padding: 2rem 2rem 3rem;
+      transition: all 0.2s;
+    }
+
+    /* toast – hidden, kept for structure */
+    .module_toast {
+      display: none;
+    }
+
+    /* hero main */
+    .c-hero__main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.75rem;
+      padding: 1.5rem 0.5rem 0.5rem;
+    }
+
+    /* headings */
+    .c-hero__headings {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .c-hero__title {
+      font-size: 4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #0b0b1a;
+      margin-bottom: 0.25rem;
+    }
+    .c-hero__title span {
+      background: linear-gradient(135deg, #a855f7, #6d28d9);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    /* heading 2 – hidden, but we keep structural */
+    .c-hero__subTitle {
+      display: none;
+    }
+
+    /* heading 3 – new large intro */
+    .c-hero__copy {
+      font-size: 1.4rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #1e1e2f;
+      max-width: 780px;
+      margin: 0 auto;
+      background: #f5f0ff;
+      padding: 1rem 2rem;
+      border-radius: 60px;
+      backdrop-filter: blur(2px);
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .c-hero__copy br {
+      display: none; /* remove old line break */
+    }
+    .c-hero__copy strong {
+      font-weight: 600;
+      color: #6d28d9;
+    }
+
+    /* CTA area : form + extra button */
+    .c-hero__cta {
+      width: 100%;
+      max-width: 780px;
+      margin-top: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    /* search form – modified placeholder + button */
+    .c-hero__cta__form {
+      width: 100%;
+    }
+
+    .c-searchGroup {
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1.5px solid #e2d9f0;
+      border-radius: 100px;
+      padding: 0.2rem 0.2rem 0.2rem 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 12px rgba(109, 40, 217, 0.06);
+    }
+    .c-searchGroup:focus-within {
+      border-color: #7c3aed;
+      box-shadow: 0 4px 16px rgba(109, 40, 217, 0.15);
+    }
+
+    .c-searchGroup__input {
+      flex: 1;
+      border: none;
+      padding: 1rem 0.75rem 1rem 0.25rem;
+      font-size: 1.2rem;
+      font-weight: 450;
+      background: transparent;
+      color: #16162b;
+      outline: none;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .c-searchGroup__input::placeholder {
+      color: #6b6b80;
+      font-weight: 400;
+      opacity: 0.8;
+    }
+
+    .c-searchGroup__button {
+      background: #7c3aed;
+      border: none;
+      border-radius: 100px;
+      padding: 0.8rem 1.8rem 0.8rem 1.6rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      transition: background 0.15s, transform 0.1s;
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: -0.01em;
+    }
+    .c-searchGroup__button:hover {
+      background: #6d28d9;
+    }
+    .c-searchGroup__button:active {
+      transform: scale(0.96);
+    }
+    .c-searchGroup__button svg {
+      display: none; /* hide old search icon */
+    }
+    /* new text inside button via pseudo? we use inner text directly in HTML */
+
+    /* "see my work" button – secondary CTA */
+    .c-hero__cta__secondary {
+      background: transparent;
+      border: 2px solid #d9c9f5;
+      border-radius: 100px;
+      padding: 0.85rem 2.4rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #3b1f6e;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: rgba(255,255,255,0.6);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+      letter-spacing: -0.01em;
+    }
+    .c-hero__cta__secondary:hover {
+      background: #7c3aed;
+      border-color: #7c3aed;
+      color: white;
+      box-shadow: 0 12px 24px -12px rgba(109, 40, 217, 0.3);
+    }
+
+    /* adjust for mobile */
+    @media (max-width: 720px) {
+      .o-container {
+        padding: 1.5rem 1rem;
+      }
+      .c-hero__title {
+        font-size: 2.8rem;
+      }
+      .c-hero__copy {
+        font-size: 1.15rem;
+        padding: 0.9rem 1.2rem;
+        border-radius: 40px;
+      }
+      .c-searchGroup {
+        padding-left: 1.2rem;
+        flex-wrap: wrap;
+        background: #ffffff;
+        border-radius: 40px;
+      }
+      .c-searchGroup__input {
+        font-size: 1rem;
+        padding: 0.9rem 0.5rem;
+        min-width: 140px;
+      }
+      .c-searchGroup__button {
+        padding: 0.7rem 1.4rem;
+        font-size: 1rem;
+        margin-left: auto;
+      }
+      .c-hero__cta__secondary {
+        padding: 0.7rem 1.8rem;
+        font-size: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .c-hero__title {
+        font-size: 2.2rem;
+      }
+      .c-hero__copy {
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+      }
+      .c-searchGroup {
+        border-radius: 40px;
+        padding-left: 0.8rem;
+      }
+      .c-searchGroup__input {
+        font-size: 0.95rem;
+        padding: 0.7rem 0.3rem;
+      }
+      .c-searchGroup__button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      .c-hero__cta__secondary {
+        padding: 0.6rem 1.4rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* utility */
+    .u-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    .u-blockLargeOnly {
+      display: none;
+    }
+    .u-svg-ico {
+      display: none;
+    }
+  </style>
 </head>
 <body>
+  <div class="o-container">
+    <!-- toast (hidden) -->
+    <p class="module_toast toast_top" style="display: none"></p>
 
-    <!-- ===== TOP BAR (Guru.com style trust signals) ===== -->
-    <div class="top-bar">
-        <div class="container">
-            <div class="trust-badge">
-            </div>
-            <div>
-                <a href="#"><i class="fas fa-phone"></i> Book a Call</a>
-                <a href="#"><i class="fas fa-envelope"></i> fatimaaltafpk.com</a>
-                <a href="#"><i class="fas fa-globe"></i> EN</a>
-            </div>
-        </div>
+    <div class="c-hero__main">
+      <header class="c-hero__headings">
+        <!-- H1: Click Aura (main) + span effect -->
+        <h1 class="c-hero__title">
+          Click <span>Aura</span>
+        </h1>
+        <!-- H2: hidden but keep for structure -->
+        <h2 class="c-hero__subTitle"></h2>
+        <!-- H3: personal brand message -->
+        <h3 class="c-hero__copy">
+          <strong>Your brand deserves an aura.</strong><br>
+          I'm Fatima Altaf. I turn social media chaos into a growth engine that attracts, engages, and converts without the fluff.
+        </h3>
+      </header>
+
+      <div class="c-hero__cta">
+        <!-- search form: placeholder replaced, button text changed -->
+        <form class="c-hero__cta__form" role="search" id="searchFreelancers" data-url="" runat="server">
+          <label for="searchQuery" class="u-sr-only">What skill are you looking for?</label>
+          <div class="c-searchGroup">
+            <input type="text"
+                   id="searchQuery"
+                   name="searchQuery"
+                   class="c-searchGroup__input"
+                   autocomplete="off"
+                   placeholder="Let's Build Your Aura"
+                   value=""
+                   onkeypress="datalayerpush(event)"
+                   onfocus="runAutocomplete();this.onfocus=null"
+            />
+            <button type="submit" id="Search-Freelancers" class="c-searchGroup__button" title="Search Freelancers" onclick="datalayerpush(event)">
+              <!-- old SVG removed, using plain text -->
+              Let's Build Your Aura
+            </button>
+          </div>
+        </form>
+
+        <!-- new secondary button "see my work" -->
+        <button class="c-hero__cta__secondary" onclick="console.log('see my work clicked')">
+          ✦ See my work
+        </button>
+      </div>
     </div>
+  </div>
 
-    <!-- ===== HEADER ===== -->
-    <header>
-        <nav class="container">
-            <div class="logo">
-                Click<span>]Aura</span>
-              
-            </div>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#work">Portfolio</a></li>
-                <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
-            </ul>
-            <div class="mobile-menu-btn" onclick="this.nextElementSibling.style.display='flex'">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
-
-    <!-- ===== HERO SECTION ===== -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-              <h1>YOUR BRAND DESERVE AN AURA
-                    Your Brand Has a Voice.<br />
-                    <span class="highlight">Let Me Help the World Hear It.</span>
-                </h1>
-                <p class="sub-headline">
-                    <strong>I'm Fatima Altaf.</strong> I turn social media chaos into a growth engine that attracts, engages, and converts—<strong>without the fluff.</strong>
-                </p>
-                <div class="cta-group">
-                    <a href="#contact" class="btn-primary">
-                        <i class="fas fa-rocket"></i> Let's Build Your Aura
-                    </a>
-                    <a href="#work" class="btn-secondary">
-                        <i class="fas fa-play-circle"></i> See My Work
-                    </a>
-                </div>
-                <div class="trust-stats">
-                    <div class="stat">
-                        <span class="number">50+</span>
-                        <span class="label"><i class="fas fa-check-circle"></i> Brands Served</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">300%</span>
-                        <span class="label"><i class="fas fa-chart-line"></i> Avg. Engagement Boost</span>
-                    </div>
-                    <div class="stat">
-                        <span class="number">4.9★</span>
-                        <span class="label"><i class="fas fa-star"></i> Client Rating</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="avatar-wrapper">
-                    <div class="avatar">
-                        <!-- Replace this with your actual photo -->
-                        <span style="font-size:3rem; background:#00d4ff22; padding:1rem 1.5rem; border-radius:50%;">FA</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SERVICES / FEATURES ===== -->
-    <section id="services" class="features">
-        <div class="container">
-            <div class="section-label">What I Do</div>
-            <h2>Turn Followers Into <span style="color:#00d4ff;">Loyal Customers</span></h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-bullhorn"></i></div>
-                    <h3>Social Media Strategy</h3>
-                    <p>Data-driven content calendars that align with your brand voice and business goals.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-pen-fancy"></i></div>
-                    <h3>Content Creation</h3>
-                    <p>Scroll-stopping visuals, captions, and videos that tell your story authentically.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-chart-simple"></i></div>
-                    <h3>Growth &amp; Analytics</h3>
-                    <p>Track what works. Scale what doesn't. I turn data into actionable insights.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="icon"><i class="fas fa-comments"></i></div>
-                    <h3>Community Management</h3>
-                    <p>Build a tribe that trusts you. Real engagement, not bots or empty follows.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== TESTIMONIALS ===== -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>What Clients Say <span style="color:#00d4ff;">About Me</span></h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"Fatima completely transformed our Instagram presence. Within 3 months, our engagement tripled and we landed 5 new clients."</blockquote>
-                    <div class="client">Sarah K. <span>— Founder, Bloom Cosmetics</span></div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"She doesn't just post content—she builds a narrative. Our brand finally has a personality that resonates with our audience."</blockquote>
-                    <div class="client">James R. <span>— CEO, TechVibe Studio</span></div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    <blockquote>"I was skeptical about hiring a social media expert, but Fatima delivered results from day one. She's worth every penny."</blockquote>
-                    <div class="client">Aisha M. <span>— Owner, Luxe Home Decor</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== CTA BANNER ===== -->
-    <section id="contact" class="cta-banner">
-        <div class="container">
-            <h2>Ready to Build Your Aura?</h2>
-            <p>Let's create a social presence that attracts, engages, and converts.</p>
-            <a href="#" class="btn-primary">
-                <i class="fas fa-calendar-check"></i> Book Your Free Strategy Call
-            </a>
-        </div>
-    </section>
-
-    <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <div>
-                <h4>Fatima Altaf</h4>
-                <p style="color:#666; max-width:300px;">Social media growth expert helping brands build authentic connections and measurable results.</p>
-                <div style="margin-top:1rem; display:flex; gap:1rem;">
-                    <a href="#" style="color:#888; font-size:1.4rem;"><i class="fab fa-instagram"></i></a>
-                    <a href="#" style="color:#888; font-size:1.4rem;"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" style="color:#888; font-size:1.4rem;"><i class="fab fa-youtube"></i></a>
-                    <a href="#" style="color:#888; font-size:1.4rem;"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div>
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
-                    <li><a href="#work">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Resources</h4>
-                <ul>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Free Guide</a></li>
-                    <li><a href="#">Case Studies</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="#"><i class="fas fa-envelope"></i> fatima@aura.com</a></li>
-                    <li><a href="#"><i class="fas fa-phone"></i> +92 300 1234567</a></li>
-                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Lahore, PK</a></li>
-                </ul>
-            </div>
-            <div class="footer-bottom">
-                &copy; 2026 Fatima Altaf. All rights reserved. Built with <i class="fas fa-heart" style="color:#00d4ff;"></i> &amp; strategy.
-            </div>
-        </div>
-    </footer>
-
-    <!-- ===== SMOOTH SCROLL ===== -->
-    <script>
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href === '#') return;
-                e.preventDefault();
-                const target = document.querySelector(href);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
+  <!-- minimal dummy functions to avoid console errors (keep original behavior) -->
+  <script>
+    function datalayerpush(e) {
+      // stub for original datalayerpush
+      // console.log('datalayerpush triggered', e);
+    }
+    function runAutocomplete() {
+      // stub for autocomplete
+      // console.log('autocomplete triggered');
+    }
+    // attach a small click handler on the new button for demo (optional)
+    document.addEventListener('DOMContentLoaded', function() {
+      const seeWorkBtn = document.querySelector('.c-hero__cta__secondary');
+      if (seeWorkBtn) {
+        seeWorkBtn.addEventListener('click', function(e) {
+          // you can add GA or custom logic here
+          // console.log('See my work – portfolio preview');
         });
-
-        // Mobile menu toggle
-        document.querySelector('.mobile-menu-btn')?.addEventListener('click', function() {
-            const nav = document.querySelector('.nav-links');
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'flex';
-                nav.style.flexDirection = 'column';
-                nav.style.position = 'absolute';
-                nav.style.top = '70px';
-                nav.style.left = '0';
-                nav.style.width = '100%';
-                nav.style.background = '#fff';
-                nav.style.padding = '2rem';
-                nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
-                nav.style.gap = '1.5rem';
-                nav.style.zIndex = '999';
-            }
-        });
-    </script>
-
+      }
+    });
+  </script>
 </body>
 </html>
