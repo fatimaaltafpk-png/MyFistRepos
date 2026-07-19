@@ -1,69 +1,5 @@
-
 <style>
-    /* Spacing and Layout CSS */
-    .hero-section {
-        padding: 80px 40px; /* Top/Bottom padding for the hero area */
-        background-color: #2c3e50; /* Background color matching the image */
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-    }
-
-    .c-hero__main {
-        max-width: 1200px;
-        margin: 0 auto; /* Keeps content centered */
-        width: 100%;
-    }
-
-    .c-hero__headings {
-        margin-bottom: 30px; /* Spacing between text and search box */
-    }
-
-    .c-hero__title {
-        font-size: 52px;
-        line-height: 1.1;
-        margin-bottom: 20px; /* Margin under the main title */
-        font-weight: 700;
-    }
-
-    .c-hero__subTitle {
-        margin: 0 0 20px 0;
-        font-weight: 400;
-        opacity: 0.9;
-    }
-
-    .c-hero__copy {
-        font-size: 18px;
-        margin-bottom: 40px; /* Spacing before the search input */
-        line-height: 1.6;
-        max-width: 600px;
-    }
-
-    /* Search Box Spacing */
-    .c-searchGroup {
-        display: flex;
-        gap: 15px; /* Spacing between input and button */
-        margin-bottom: 25px; /* Margin below the search/action bar */
-        background: white;
-        padding: 5px;
-        border-radius: 4px;
-        max-width: 800px;
-    }
-
-    .c-searchGroup__input {
-        flex: 1;
-        padding: 15px 20px; /* Internal padding of input field */
-        border: none;
-        font-size: 16px;
-    }
-
-    .c-searchGroup__button {
-        padding: 10px 30px; /* Button sizing */
-        cursor: pointer;
-    }
-</style>
-<style>
-    /* EXACT GURU BACKGROUND - Jaisa picture mein hai */
+    /* Section ka main layout - Text left pe, image right pe */
     .guru-exact-bg {
         width: 100%;
         min-height: 500px;
@@ -72,10 +8,12 @@
         overflow: hidden;
         display: flex;
         align-items: center;
-        padding: 60px 40px;
+        justify-content: space-between; /* Text aur image ke beech space */
+        padding: 60px 80px;
+        gap: 20px;
     }
 
-    /* Light blue gradient - right side (exactly like picture) */
+    /* Background dots aur gradients wahi hain */
     .guru-exact-bg::before {
         content: '';
         position: absolute;
@@ -83,105 +21,71 @@
         top: 0;
         bottom: 0;
         width: 60%;
-        background: linear-gradient(135deg, 
-                    rgba(43, 50, 71, 0) 0%,
-                    rgba(43, 50, 71, 0.3) 30%,
-                    rgba(59, 130, 200, 0.25) 60%,
-                    rgba(70, 150, 220, 0.35) 100%);
+        background: linear-gradient(135deg, rgba(43, 50, 71, 0) 0%, rgba(43, 50, 71, 0.3) 30%, rgba(59, 130, 200, 0.25) 60%, rgba(70, 150, 220, 0.35) 100%);
         pointer-events: none;
     }
 
-    /* Decorative circle - top right */
-    .guru-exact-bg .dot-1 {
-        position: absolute;
-        right: -50px;
-        top: -100px;
-        width: 500px;
-        height: 500px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(80, 160, 240, 0.12), transparent 70%);
-        pointer-events: none;
-    }
+    .dot-1, .dot-2, .dot-3 { position: absolute; border-radius: 50%; pointer-events: none; }
+    .dot-1 { right: -50px; top: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(80, 160, 240, 0.12), transparent 70%); }
+    .dot-2 { right: 10%; bottom: -100px; width: 350px; height: 350px; background: radial-gradient(circle, rgba(60, 140, 220, 0.10), transparent 70%); }
+    .dot-3 { right: 30%; top: 15%; width: 150px; height: 150px; background: radial-gradient(circle, rgba(100, 180, 255, 0.08), transparent 70%); }
 
-    /* Decorative circle - bottom right */
-    .guru-exact-bg .dot-2 {
-        position: absolute;
-        right: 10%;
-        bottom: -100px;
-        width: 350px;
-        height: 350px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(60, 140, 220, 0.10), transparent 70%);
-        pointer-events: none;
-    }
-
-    /* Small circle - middle right */
-    .guru-exact-bg .dot-3 {
-        position: absolute;
-        right: 30%;
-        top: 15%;
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        background: radial-gradient(circle, rgba(100, 180, 255, 0.08), transparent 70%);
-        pointer-events: none;
-    }
-
-    /* Content */
-    .guru-exact-bg .content {
+    /* Text content - Isko bilkul nahi chheda */
+    .content {
         position: relative;
         z-index: 2;
         color: #ffffff;
         max-width: 600px;
     }
 
-    .guru-exact-bg .content h1 {
-        font-size: 48px;
-        font-weight: 700;
-        margin: 0 0 12px 0;
-        line-height: 1.2;
-        color: #ffffff;
-    }
+    .content h1 { font-size: 48px; font-weight: 700; margin: 0 0 10px 0; }
+    .content h2 { font-size: 24px; font-weight: 400; margin: 0 0 20px 0; color: #a0c0ff; }
+    .content p { font-size: 18px; line-height: 1.6; color: rgba(255, 255, 255, 0.85); margin-bottom: 30px; }
 
-    .guru-exact-bg .content h1 span {
-        color: #ffffff;
-    }
+    /* Search bar style */
+    .c-searchGroup { display: flex; gap: 10px; max-width: 500px; background: white; padding: 5px; border-radius: 4px; }
+    .c-searchGroup__input { flex: 1; padding: 12px 15px; border: none; outline: none; font-size: 16px; }
+    .c-searchGroup__button { padding: 10px 25px; background: #0073b1; color: white; border: none; cursor: pointer; font-weight: bold; }
+    .c-secondary-btn { display: inline-block; margin-top: 15px; color: #ffffff; text-decoration: underline; }
 
-    .guru-exact-bg .content p {
-        font-size: 18px;
-        line-height: 1.6;
-        color: rgba(255, 255, 255, 0.85);
-        margin-bottom: 0;
+    /* Image Wrapper - Image ko right side set karne ke liye */
+    .hero-image-wrapper {
+        position: relative;
+        z-index: 2;
+        width: 350px; /* Image ka size */
+        margin-right: 50px;
     }
+    .hero-image-wrapper img { width: 100%; height: auto; }
 
-    /* Responsive */
+    /* Mobile Responsive */
     @media (max-width: 768px) {
-        .guru-exact-bg {
-            padding: 40px 20px;
-            min-height: 350px;
-        }
-        .guru-exact-bg .content h1 {
-            font-size: 30px;
-        }
-        .guru-exact-bg .content p {
-            font-size: 15px;
-        }
-        .guru-exact-bg::before {
-            width: 100%;
-            opacity: 0.6;
-        }
+        .guru-exact-bg { flex-direction: column; text-align: center; padding: 40px 20px; }
+        .hero-image-wrapper { display: none; } /* Mobile pe image hide ho jayegi taake layout na bigde */
     }
 </style>
 
 <section class="guru-exact-bg">
-    <!-- Decorative dots (same as picture) -->
     <div class="dot-1"></div>
     <div class="dot-2"></div>
     <div class="dot-3"></div>
-    
-    <!-- Your text content -->
+
+    <!-- Text area waisa ka waisa -->
     <div class="content">
-        <h1>Find & Hire <br><span>Expert Freelancers</span></h1>
-        <p>Work with the best freelance talent from around the world on our secure, <br>flexible and cost-effective platform.</p>
+        <h1>Click Aura</h1>
+        <h2>Your brand deserves an aura</h2>
+        <p>I'm Fatima Altaf. I turn social media chaos into a growth engine that attracts, engages, and converts without the fluff.</p>
+
+        <form class="c-hero__cta__form">
+            <div class="c-searchGroup">
+                <input type="text" class="c-searchGroup__input" placeholder="Lets Build Your Aura">
+                <button type="submit" class="c-searchGroup__button">Search</button>
+            </div>
+            <a href="#" class="c-secondary-btn">See My Work</a>
+        </form>
+    </div>
+
+    <!-- Image area right side par -->
+    <div class="hero-image-wrapper">
+        <img src="https://i.ibb.co/QjQLv8vg/Screenshot-2026-07-19-9-34-44-PM.png" alt="Fatima Altaf">
     </div>
 </section>
