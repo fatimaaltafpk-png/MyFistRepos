@@ -67,7 +67,7 @@
     <div class="c-hero__main">
         <header class="c-hero__headings">
             <h1 class="c-hero__title">Your Brand  <br>Deserve An AURA </</h1>
-            <h2 class="c-hero__subTitle">[Sub-Heading Here]</h2>
+            <h2 class="c-hero__subTitle"></h2>
             <h3 class="c-hero__copy">I'm Fatima Altaf. I turn social media chaos into a growth engine that attracts, engages, and converts without the fluff.
 </h3>
         </header>
@@ -82,3 +82,86 @@
         </div>
     </div>
 </section>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .hero-bg {
+    width: 100%;
+    min-height: 500px;
+    position: relative;
+    background: #2b3247;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 60px 40px;
+  }
+
+  /* The gradient overlay on the right side */
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background: radial-gradient(ellipse at 70% 50%, 
+                rgba(70, 110, 160, 0.6) 0%, 
+                rgba(43, 50, 71, 0) 70%);
+    pointer-events: none;
+  }
+
+  /* Optional: abstract shapes like the original */
+  .hero-bg .shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    pointer-events: none;
+  }
+
+  .hero-bg .shape-1 {
+    width: 600px;
+    height: 600px;
+    right: -100px;
+    top: -200px;
+    background: radial-gradient(circle, rgba(80, 140, 210, 0.15), transparent);
+  }
+
+  .hero-bg .shape-2 {
+    width: 400px;
+    height: 400px;
+    right: 20%;
+    bottom: -150px;
+    background: radial-gradient(circle, rgba(60, 120, 200, 0.1), transparent);
+  }
+
+  /* Content on top */
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 600px;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero-bg">
+  <!-- Decorative shapes -->
+  <div class="shape shape-1"></div>
+  <div class="shape shape-2"></div>
+
+</body>
+</html>
