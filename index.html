@@ -100,3 +100,86 @@ window.dataLayer.push({'event':'formSubmission','formType':formType})}}
         <ul class="o-flex-container o-flex-container--minTwo o-flex-container--four o-flex-container--center">
 
            
+<style>
+    /* Spacing and Layout CSS */
+    .hero-section {
+        padding: 80px 40px; /* Top/Bottom padding for the hero area */
+        background-color: #2c3e50; /* Background color matching the image */
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+    }
+
+    .c-hero__main {
+        max-width: 1200px;
+        margin: 0 auto; /* Keeps content centered */
+        width: 100%;
+    }
+
+    .c-hero__headings {
+        margin-bottom: 30px; /* Spacing between text and search box */
+    }
+
+    .c-hero__title {
+        font-size: 52px;
+        line-height: 1.1;
+        margin-bottom: 20px; /* Margin under the main title */
+        font-weight: 700;
+    }
+
+    .c-hero__subTitle {
+        margin: 0 0 20px 0;
+        font-weight: 400;
+        opacity: 0.9;
+    }
+
+    .c-hero__copy {
+        font-size: 18px;
+        margin-bottom: 40px; /* Spacing before the search input */
+        line-height: 1.6;
+        max-width: 600px;
+    }
+
+    /* Search Box Spacing */
+    .c-searchGroup {
+        display: flex;
+        gap: 15px; /* Spacing between input and button */
+        margin-bottom: 25px; /* Margin below the search/action bar */
+        background: white;
+        padding: 5px;
+        border-radius: 4px;
+        max-width: 800px;
+    }
+
+    .c-searchGroup__input {
+        flex: 1;
+        padding: 15px 20px; /* Internal padding of input field */
+        border: none;
+        font-size: 16px;
+    }
+
+    .c-searchGroup__button {
+        padding: 10px 30px; /* Button sizing */
+        cursor: pointer;
+    }
+</style>
+
+<!-- Structure -->
+<section class="hero-section">
+    <div class="c-hero__main">
+        <header class="c-hero__headings">
+            <h1 class="c-hero__title">[Your Brand  <br>Deserve An AURA ]</h1>
+            <h2 class="c-hero__subTitle">[Sub-Heading Here]</h2>
+            <h3 class="c-hero__copy">[I'm Fatima Altaf. I turn social media chaos into a growth engine that attracts,engages, and converts without the fluff.]</h3>
+        </header>
+
+        <div class="c-hero__cta">
+            <form class="c-hero__cta__form" role="search">
+                <div class="c-searchGroup">
+                    <input type="text" class="c-searchGroup__input" placeholder="[Placeholder Text]">
+                    <button type="submit" class="c-searchGroup__button">[Button Text]</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
