@@ -1,890 +1,836 @@
-
-
 <!DOCTYPE html>
-
-
 <html lang="en">
-
-
 <head>
-
-
-<meta charset="UTF-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title></strong>Click Aura</strong> - Website</title>
-
-
-
-
-
-
-<!-- ====== STYLE 1: HEADER NAV CSS ====== -->
-
-
-<style>
-
-
-/* Header Container Styling */
-
-
-.header-nav {
-
-
-display: flex;
-
-
-align-items: center;
-
-
-justify-content: space-between;
-
-
-padding: 5px 8%; /* Adjusted spacing for the top */
-
-
-background-color: #ffffff;
-
-
-border-bottom: 1px solid #e0e0e0;
-
-
-font-family: 'Segoe UI', Arial, sans-serif;
-
-
-}
-
-
-
-
-
-
-/* Brand Logo Area */
-
-
-.logo {
-
-
-font-size: 26px;
-
-
-font-weight: 700;
-
-
-color: #2b3247; /* Professional Dark Navy */
-
-
-letter-spacing: -0.5px;
-
-
-margin-left: 30px;
-
-
-}
-
-
-
-
-
-
-/* Navigation Links */
-
-
-.nav-links {
-
-
-display: flex;
-
-
-list-style: none;
-
-
-gap: 35px; /* Spacing between menu items */
-
-
-}
-
-
-
-
-
-
-.nav-links li a {
-
-
-text-decoration: none;
-
-
-color: #4a4a4a;
-
-
-font-weight: 700;
-
-
-font-size: 16px;
-
-
-transition: color 0.3s ease;
-
-
-}
-
-
-
-
-
-
-.nav-links li a:hover {
-
-
-color: #0073b1; /* Hover effect */
-
-
-}
-
-
-
-
-
-
-/* Buttons Area */
-
-
-.nav-buttons {
-
-
-display: flex;
-
-
-gap: 15px;
-
-
-}
-
-
-
-
-
-
-.btn-cta {
-
-
-background-color: #0073b1; /* Professional blue matching your theme */
-
-
-color: #ffffff;
-
-
-padding: 10px 22px;
-
-
-border-radius: 4px;
-
-
-text-decoration: none;
-
-
-font-weight: 700;
-
-
-border: none;
-
-
-cursor: pointer;
-
-
-}
-
-
-
-
-
-
-.btn-login {
-
-
-color: #333;
-
-
-text-decoration: none;
-
-
-padding: 10px;
-
-
-font-weight: 700;
-
-
-}
-
-
-</style>
-
-
-
-
-
-
-<!-- ====== STYLE 2: HERO SECTION CSS ====== -->
-
-
-<style>
-
-
-/* Spacing and Layout CSS */
-
-
-.hero-section {
-
-
-padding: 80px 40px; /* Top/Bottom padding for the hero area */
-
-
-background-color: #2c3e50; /* Background color matching the image */
-
-
-color: #ffffff;
-
-
-display: flex;
-
-
-align-items: center;
-
-
-}
-
-
-
-
-
-
-.c-hero__main {
-
-
-max-width: 1200px;
-
-
-margin: 0 auto; /* Keeps content centered */
-
-
-width: 100%;
-
-
-}
-
-
-
-
-
-
-.c-hero__headings {
-
-
-margin-bottom: 30px; /* Spacing between text and search box */
-
-
-}
-
-
-
-
-
-
-.c-hero__title {
-
-
-font-size: 36px;
-
-
-line-height: 1.1;
-
-
-margin-bottom: 20px; /* Margin under the main title */
-
-
-font-weight: 700;
-
-
-}
-
-
-
-
-
-
-.c-hero__subTitle {
-
-
-margin: 0 0 20px 0;
-
-
-font-weight: 400;
-
-
-opacity: 0.9;
-
-
-}
-
-
-
-
-
-
-.c-hero__copy {
-
-
-font-size: 18px;
-
-
-margin-bottom: 40px; /* Spacing before the search input */
-
-
-line-height: 1.6;
-
-
-max-width: 600px;
-
-
-}
-
-
-
-
-
-
-/* Search Box Spacing */
-
-
-.c-searchGroup {
-
-
-display: flex;
-
-
-gap: 15px; /* Spacing between input and button */
-
-
-margin-bottom: 25px; /* Margin below the search/action bar */
-
-
-background: white;
-
-
-padding: 5px;
-
-
-border-radius: 4px;
-
-
-max-width: 400px;
-
-
-}
-
-
-
-
-
-
-.c-searchGroup__input {
-
-
-flex: 1;
-
-
-padding: 15px 20px; /* Internal padding of input field */
-
-
-border: none;
-
-
-font-size: 16px;
-
-
-}
-
-
-
-
-
-
-.c-searchGroup__button {
-
-
-padding: 11px 27px /* Button sizing */
-
-
-cursor: pointer;
-
-
-}
-
-
-</style>
-
-
-
-
-
-
-<!-- ====== STYLE 3: GURU SECTION + CAROUSEL ARROWS CSS ====== -->
-
-
-<style>
-
-
-.guru-exact-bg {
-
-
-width: 100%;
-
-
-min-height: 500px;
-
-
-position: relative;
-
-
-background: #2b3247;
-
-
-overflow: hidden;
-
-
-display: flex;
-
-
-align-items: center;
-
-
-justify-content: center; /* Content ko center karne ke liye */
-
-
-padding: 60px 80px;
-
-
-gap: 20px;
-
-
-}
-
-
-
-
-
-
-/* CAROUSEL ARROWS KA STYLE */
-
-
-.carousel-arrow {
-
-
-position: absolute;
-
-
-top: 50%;
-
-
-transform: translateY(-50%);
-
-
-width: 40px;
-
-
-height: 40px;
-
-
-background: rgba(0, 0, 0, 0.3); /* Transparent dark background */
-
-
-color: white;
-
-
-border-radius: 50%;
-
-
-display: flex;
-
-
-align-items: center;
-
-
-justify-content: center;
-
-
-cursor: pointer;
-
-
-font-size: 20px;
-
-
-z-index: 10;
-
-
-transition: background 0.3s;
-
-
-}
-
-
-
-
-
-
-.carousel-arrow:hover {
-
-
-background: rgba(0, 0, 0, 0.6); /* Hover par dark ho jayega */
-
-
-}
-
-
-
-
-
-
-.left-arrow { left: 20px; }
-
-
-.right-arrow { right: 20px; }
-
-
-
-
-
-
-/* Baki purana CSS yahan aayega... */
-
-
-.guru-exact-bg::before { /* ... */ }
-
-
-/* ... */
-
-
-<style>
-
-
-.btn-work {
-
-
-padding: 6px 15px;
-
-
-font-size: 12px;
-
-
-max-width: 150px;
-
-
-}
-
-
-</style>
-
-
-<style>
-
-
-/* ... aapka purana CSS ... */
-
-
-
-
-
-
-.guru-exact-bg {
-
-
-width: 100%;
-
-
-min-height: 500px;
-
-
-position: relative;
-
-
-background: #2b3247;
-
-
-overflow: hidden;
-
-
-display: flex;
-
-
-align-items: center;
-
-
-justify-content: center;
-
-
-padding: 60px 80px;
-
-
-gap: 20px;
-
-
-}
-
-
-
-
-
-
-/* CAROUSEL ARROWS KA STYLE */
-
-
-.carousel-arrow { ... }
-
-
-.left-arrow { ... }
-
-
-.right-arrow { ... }
-
-
-
-
-
-
-/* 🔽 YAHAN PASTE KAREIN 🔽 */
-
-
-.clean-background {
-
-
-width: 100%;
-
-
-height: 100vh;
-
-
-background: linear-gradient(135deg, #2b3247 0%, #1a2233 100%);
-
-
-background-size: cover;
-
-
-background-position: center;
-
-
-background-repeat: no-repeat;
-
-
-}
-
-
-</style>
-
-
-
-
-
-
-</style>
-
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Click Aura - Premium Brand Website</title>
+
+    <!-- ====== GOOGLE FONTS ====== -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <style>
+        /* ====== RESET & BASE ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ====== HEADER NAVIGATION ====== */
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 8%;
+            background: #ffffff;
+            border-bottom: 1px solid #e8ecf1;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 900;
+            color: #2b3247;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #2b3247 0%, #1a2233 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 36px;
+        }
+
+        .nav-links li a {
+            color: #4a4a5a;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #0073b1;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links li a:hover {
+            color: #0073b1;
+        }
+
+        .nav-links li a:hover::after {
+            width: 100%;
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-login {
+            color: #2b3247;
+            font-weight: 600;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .btn-login:hover {
+            color: #0073b1;
+        }
+
+        .btn-cta {
+            background: #0073b1;
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 15px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-cta:hover {
+            background: #005a8c;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 115, 177, 0.3);
+        }
+
+        /* ====== MOBILE MENU TOGGLE ====== */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            width: 28px;
+            height: 3px;
+            background: #2b3247;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+
+        /* ====== HERO SECTION ====== */
+        .hero-section {
+            padding: 100px 8% 120px;
+            background: linear-gradient(145deg, #2c3e50 0%, #1a2a3a 100%);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            min-height: 85vh;
+        }
+
+        .c-hero__main {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .c-hero__headings {
+            max-width: 700px;
+        }
+
+        .c-hero__title {
+            font-size: 56px;
+            line-height: 1.1;
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -2px;
+        }
+
+        .c-hero__title span {
+            color: #64b5f6;
+        }
+
+        .c-hero__copy {
+            font-size: 20px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            max-width: 580px;
+        }
+
+        .c-hero__copy strong {
+            color: #64b5f6;
+            font-weight: 700;
+        }
+
+        .c-searchGroup {
+            display: flex;
+            gap: 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            max-width: 480px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .c-searchGroup__input {
+            flex: 1;
+            padding: 18px 24px;
+            border: none;
+            font-size: 16px;
+            outline: none;
+            color: #1a1a2e;
+            font-weight: 500;
+        }
+
+        .c-searchGroup__input::placeholder {
+            color: #aaa;
+            font-weight: 400;
+        }
+
+        .c-searchGroup__button {
+            padding: 18px 32px;
+            background: #0073b1;
+            color: white;
+            border: none;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+        }
+
+        .c-searchGroup__button:hover {
+            background: #005a8c;
+        }
+
+        /* ====== GURU / FEATURES SECTION ====== */
+        .guru-section {
+            padding: 80px 8% 100px;
+            background: linear-gradient(145deg, #2b3247 0%, #1a2233 100%);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guru-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 115, 177, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .guru-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .guru-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .guru-header h2 {
+            font-size: 40px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .guru-header p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 18px;
+            max-width: 500px;
+            margin: 10px auto 0;
+        }
+
+        /* ====== CAROUSEL ====== */
+        .carousel-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            width: 100%;
+            border-radius: 16px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            gap: 0;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            padding: 40px 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .slide-text {
+            flex: 1;
+        }
+
+        .slide-text .badge {
+            display: inline-block;
+            background: rgba(0, 115, 177, 0.25);
+            color: #64b5f6;
+            padding: 4px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .slide-text h3 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .slide-text p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .slide-text .btn-work {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .slide-text .btn-work:hover {
+            background: #0073b1;
+            border-color: #0073b1;
+            transform: translateY(-2px);
+        }
+
+        .slide-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-image .placeholder-img {
+            width: 100%;
+            max-width: 380px;
+            height: 260px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.3);
+            border: 2px dashed rgba(255, 255, 255, 0.08);
+            font-weight: 600;
+        }
+
+        /* ====== CAROUSEL ARROWS ====== */
+        .carousel-arrow {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.08);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: 300;
+            transition: all 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            flex-shrink: 0;
+            user-select: none;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(0, 115, 177, 0.4);
+            border-color: #0073b1;
+            transform: scale(1.05);
+        }
+
+        .carousel-arrow:active {
+            transform: scale(0.95);
+        }
+
+        /* ====== CAROUSEL DOTS ====== */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .dot.active {
+            background: #0073b1;
+            width: 28px;
+            border-radius: 6px;
+        }
+
+        .dot:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* ====== RESPONSIVE DESIGN ====== */
+        @media (max-width: 992px) {
+            .nav-links {
+                gap: 20px;
+            }
+
+            .c-hero__title {
+                font-size: 42px;
+            }
+
+            .slide-text h3 {
+                font-size: 26px;
+            }
+
+            .carousel-slide {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+                gap: 30px;
+            }
+
+            .slide-image .placeholder-img {
+                max-width: 100%;
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 30px 8%;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                gap: 20px;
+                border-top: 1px solid #eee;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-buttons .btn-login {
+                display: none;
+            }
+
+            .header-nav {
+                padding: 14px 5%;
+            }
+
+            .hero-section {
+                padding: 70px 5% 90px;
+                min-height: auto;
+            }
+
+            .c-hero__title {
+                font-size: 32px;
+            }
+
+            .c-hero__copy {
+                font-size: 17px;
+            }
+
+            .c-searchGroup {
+                flex-direction: column;
+                max-width: 100%;
+                background: transparent;
+                box-shadow: none;
+                gap: 12px;
+            }
+
+            .c-searchGroup__input {
+                border-radius: 8px;
+                padding: 16px 20px;
+                background: white;
+            }
+
+            .c-searchGroup__button {
+                border-radius: 8px;
+                text-align: center;
+                padding: 16px;
+            }
+
+            .guru-section {
+                padding: 60px 5% 80px;
+            }
+
+            .guru-header h2 {
+                font-size: 30px;
+            }
+
+            .carousel-wrapper {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .carousel-arrow {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .carousel-slide {
+                padding: 24px;
+                gap: 20px;
+            }
+
+            .slide-text h3 {
+                font-size: 22px;
+            }
+
+            .slide-image .placeholder-img {
+                height: 160px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 22px;
+            }
+
+            .c-hero__title {
+                font-size: 26px;
+            }
+
+            .c-hero__copy {
+                font-size: 15px;
+            }
+
+            .btn-cta {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+
+            .guru-header h2 {
+                font-size: 24px;
+            }
+
+            .slide-text h3 {
+                font-size: 19px;
+            }
+
+            .carousel-slide {
+                padding: 18px;
+            }
+        }
+    </style>
 </head>
-
-
-
-
-
 
 <body>
 
-
-
-
-
-
-<!-- ====== HEADER (NAVIGATION) ====== -->
-
-
-<header class="header-nav">
-
-
-<!-- Brand Name -->
-
-
-<div class="logo">Click Aura</div>
-
-
-
-
-
-
-<!-- Main Navigation -->
-
-
-<ul class="nav-links">
-
-
-<li><a href="#services">Services</a></li>
-
-
-<li><a href="#portfolio">Portfolio</a></li>
-
-
-<li><a href="#about">About Me</a></li>
-
-
-<li><a href="#contact">Contact</a></li>
-
-
-</ul>
-
-
-
-
-
-
-<!-- Right Side CTA -->
-
-
-<div class="nav-buttons">
-
-
-<a href="#login" class="btn-login">Login</a>
-
-
-<a href="#quote" class="btn-cta">Get a Quote</a>
-
-
-</div>
-
-
-</header>
-
-
-
-
-
-
-<!-- ====== HERO SECTION ====== -->
-
-
-<section class="hero-section">
-
-
-<div class="c-hero__main">
-
-
-<div class="c-hero__headings">
-
-
-<h1 class="c-hero__title">YOUR BRAND <br />
-
-
-DESERVE AN AURA
-
-
-</h1>
-
-
-<h2 class="c-hero__subTitle"></h2>
-
-
-<p class="c-hero__copy">I'm <strong>Fatima Altaf</strong> I turn social media chaos into a growth engine that attracts,engages, and converts without the fluff.</p>
-
-
-</div>
-
-
-
-
-
-
-<!-- Search Box -->
-
-
-<div class="c-searchGroup">
-
-
-<input type="text" class="c-searchGroup__input" placeholder="Lets Bulid Your Aura">
-
-
-<button class="c-searchGroup__button btn-cta">show my work</button>
-
-
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<!-- ====== GURU SECTION WITH CAROUSEL ARROWS ====== -->
-
-
-<section class="guru-exact-bg">
-
-
-<!-- Carousel Arrows -->
-
-
-<div class="carousel-arrow left-arrow">&#8249;</div>
-
-
-<div class="carousel-arrow right-arrow">&#8250;</div>
-
-
-
-
-
-
-<!-- Content -->
-
-
-<div class="content">
-
-
-<!-- Text and Search Bar here -->
-
-
-</div>
-
-
-
-
-
-
-<!-- Image wrapper -->
-
-
-<div class="hero-image-wrapper">
-
-
-<!-- Image here -->
-
-
-</div>
-
-
-</section>
-
-
-
-
-
+    <!-- ====== HEADER ====== -->
+    <header class="header-nav">
+        <div class="logo">✦ Click Aura</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-buttons">
+            <a href="#login" class="btn-login">Login</a>
+            <a href="#quote" class="btn-cta">Get a Quote</a>
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero-section">
+        <div class="c-hero__main">
+            <div class="c-hero__headings">
+                <h1 class="c-hero__title">
+                    YOUR BRAND<br />
+                    DESERVES AN <span>AURA</span>
+                </h1>
+                <p class="c-hero__copy">
+                    I'm <strong>Fatima Altaf</strong> — I turn social media chaos into a
+                    growth engine that attracts, engages, and converts without the fluff.
+                </p>
+            </div>
+
+            <div class="c-searchGroup">
+                <input type="text" class="c-searchGroup__input" placeholder="Let's Build Your Aura" />
+                <button class="c-searchGroup__button">Show My Work</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== GURU / CAROUSEL SECTION ====== -->
+    <section class="guru-section" id="services">
+        <div class="guru-container">
+            <div class="guru-header">
+                <h2>✨ What I Do Best</h2>
+                <p>Strategies that turn followers into loyal customers.</p>
+            </div>
+
+            <div class="carousel-wrapper">
+                <!-- Left Arrow -->
+                <div class="carousel-arrow" id="prevBtn">‹</div>
+
+                <!-- Carousel Track -->
+                <div class="carousel-track-container">
+                    <div class="carousel-track" id="carouselTrack">
+
+                        <!-- SLIDE 1 -->
+                        <div class="carousel-slide">
+                            <div class="slide-text">
+                                <span class="badge">✦ Social Media Strategy</span>
+                                <h3>Growth Engine Blueprint</h3>
+                                <p>
+                                    A data-driven roadmap to grow your audience, boost engagement,
+                                    and turn followers into paying clients — without burnout.
+                                </p>
+                                <button class="btn-work">Learn More →</button>
+                            </div>
+                            <div class="slide-image">
+                                <div class="placeholder-img">📊 Strategy</div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 2 -->
+                        <div class="carousel-slide">
+                            <div class="slide-text">
+                                <span class="badge">✦ Content Creation</span>
+                                <h3>Magnetic Content Lab</h3>
+                                <p>
+                                    High-impact posts, reels, and stories designed to stop the
+                                    scroll and make your brand unforgettable.
+                                </p>
+                                <button class="btn-work">Explore →</button>
+                            </div>
+                            <div class="slide-image">
+                                <div class="placeholder-img">🎨 Content</div>
+                            </div>
+                        </div>
+
+                        <!-- SLIDE 3 -->
+                        <div class="carousel-slide">
+                            <div class="slide-text">
+                                <span class="badge">✦ Brand Identity</span>
+                                <h3>Your Signature Aura</h3>
+                                <p>
+                                    From visual identity to voice — we craft a cohesive brand
+                                    presence that resonates with your ideal audience.
+                                </p>
+                                <button class="btn-work">See More →</button>
+                            </div>
+                            <div class="slide-image">
+                                <div class="placeholder-img">🌟 Brand</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Right Arrow -->
+                <div class="carousel-arrow" id="nextBtn">›</div>
+            </div>
+
+            <!-- Dots -->
+            <div class="carousel-dots" id="dotsContainer"></div>
+        </div>
+    </section>
+
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+        // ====== MOBILE MENU ======
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('open');
+        }
+
+        // Close menu on link click (mobile)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // ====== CAROUSEL ======
+        const track = document.getElementById('carouselTrack');
+        const slides = document.querySelectorAll('.carousel-slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('dotsContainer');
+
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        // Create dots
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.classList.add('dot');
+            if (i === 0) dot.classList.add('active');
+            dot.dataset.index = i;
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.dot');
+
+        function updateCarousel() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentIndex);
+            });
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // Auto-play (optional)
+        let autoPlay = setInterval(nextSlide, 6000);
+
+        // Pause auto-play on hover
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        carouselWrapper.addEventListener('mouseleave', () => {
+            autoPlay = setInterval(nextSlide, 6000);
+        });
+
+        // Touch/Swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        track.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        track.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+            }
+        });
+
+        // Keyboard support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        // ====== SEARCH BUTTON ======
+        document.querySelector('.c-searchGroup__button').addEventListener('click', function() {
+            const input = document.querySelector('.c-searchGroup__input');
+            const query = input.value.trim();
+            if (query) {
+                alert('✨ Thanks! We\'ll build your aura around: "' + query + '"');
+            } else {
+                alert('💡 Tell us what you need — let\'s build your aura together!');
+            }
+        });
+
+        // Enter key on search input
+        document.querySelector('.c-searchGroup__input').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                document.querySelector('.c-searchGroup__button').click();
+            }
+        });
+
+        // ====== "WORK" BUTTONS IN CAROUSEL ======
+        document.querySelectorAll('.btn-work').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const text = this.closest('.slide-text').querySelector('h3').textContent;
+                alert('🚀 Let\'s work on: ' + text);
+            });
+        });
+    </script>
 
 </body>
-
-
 </html>
 
 
