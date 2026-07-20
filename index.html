@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Click Aura - Premium Brand Website</title>
+    <title>Click Aura - Guru Style</title>
 
-    <!-- ====== GOOGLE FONTS ====== -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 
     <style>
-        /* ====== RESET & BASE ====== */
+        /* ====== RESET ====== */
         * {
             margin: 0;
             padding: 0;
@@ -17,10 +16,10 @@
         }
 
         body {
-            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             background: #ffffff;
             color: #1a1a2e;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         a {
@@ -28,706 +27,906 @@
             color: inherit;
         }
 
-        /* ====== HEADER NAVIGATION ====== */
-        .header-nav {
+        /* ====== HEADER - GURU.COM STYLE ====== */
+        .guru-header {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 18px 8%;
+            padding: 16px 60px;
             background: #ffffff;
-            border-bottom: 1px solid #e8ecf1;
+            border-bottom: 1px solid #eef0f2;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
         }
 
-        .logo {
-            font-size: 28px;
+        .guru-logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #0a1a2b;
+            letter-spacing: -0.5px;
+        }
+
+        .guru-logo span {
+            color: #0066cc;
+        }
+
+        .guru-nav {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .guru-nav a {
+            font-size: 15px;
+            font-weight: 500;
+            color: #4a5568;
+            transition: color 0.2s;
+        }
+
+        .guru-nav a:hover {
+            color: #0066cc;
+        }
+
+        .guru-nav-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .btn-outline {
+            padding: 10px 24px;
+            border: 1.5px solid #d1d5db;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1a1a2e;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-outline:hover {
+            border-color: #0066cc;
+            color: #0066cc;
+            background: #f0f7ff;
+        }
+
+        .btn-primary {
+            padding: 10px 28px;
+            background: #0066cc;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: #0052a3;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+        }
+
+        .btn-primary-white {
+            padding: 10px 28px;
+            background: #ffffff;
+            color: #0066cc;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-primary-white:hover {
+            background: #f0f7ff;
+            transform: translateY(-1px);
+        }
+
+        /* ====== HERO - GURU.COM STYLE ====== */
+        .guru-hero {
+            padding: 80px 60px 100px;
+            background: linear-gradient(165deg, #0a1a2b 0%, #162b3e 50%, #1a3347 100%);
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guru-hero::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(0, 102, 204, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .guru-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 102, 204, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .guru-hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .guru-hero-left h1 {
+            font-size: 56px;
             font-weight: 900;
-            color: #2b3247;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, #2b3247 0%, #1a2233 100%);
+            line-height: 1.08;
+            letter-spacing: -2px;
+            margin-bottom: 20px;
+        }
+
+        .guru-hero-left h1 .highlight {
+            background: linear-gradient(135deg, #64b5f6, #42a5f5);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 36px;
-        }
-
-        .nav-links li a {
-            color: #4a4a5a;
-            font-weight: 600;
-            font-size: 15px;
-            transition: color 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links li a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #0073b1;
-            transition: width 0.3s ease;
-        }
-
-        .nav-links li a:hover {
-            color: #0073b1;
-        }
-
-        .nav-links li a:hover::after {
-            width: 100%;
-        }
-
-        .nav-buttons {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .btn-login {
-            color: #2b3247;
-            font-weight: 600;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-
-        .btn-login:hover {
-            color: #0073b1;
-        }
-
-        .btn-cta {
-            background: #0073b1;
-            color: #ffffff;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 15px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-cta:hover {
-            background: #005a8c;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 115, 177, 0.3);
-        }
-
-        /* ====== MOBILE MENU TOGGLE ====== */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-        }
-
-        .menu-toggle span {
-            width: 28px;
-            height: 3px;
-            background: #2b3247;
-            border-radius: 3px;
-            transition: 0.3s;
-        }
-
-        /* ====== HERO SECTION ====== */
-        .hero-section {
-            padding: 100px 8% 120px;
-            background: linear-gradient(145deg, #2c3e50 0%, #1a2a3a 100%);
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            min-height: 85vh;
-        }
-
-        .c-hero__main {
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .c-hero__headings {
-            max-width: 700px;
-        }
-
-        .c-hero__title {
-            font-size: 56px;
-            line-height: 1.1;
-            font-weight: 900;
-            margin-bottom: 16px;
-            letter-spacing: -2px;
-        }
-
-        .c-hero__title span {
-            color: #64b5f6;
-        }
-
-        .c-hero__copy {
+        .guru-hero-left p {
             font-size: 20px;
-            line-height: 1.7;
-            margin-bottom: 40px;
-            opacity: 0.9;
-            max-width: 580px;
-        }
-
-        .c-hero__copy strong {
-            color: #64b5f6;
-            font-weight: 700;
-        }
-
-        .c-searchGroup {
-            display: flex;
-            gap: 0;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            max-width: 480px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
-        }
-
-        .c-searchGroup__input {
-            flex: 1;
-            padding: 18px 24px;
-            border: none;
-            font-size: 16px;
-            outline: none;
-            color: #1a1a2e;
-            font-weight: 500;
-        }
-
-        .c-searchGroup__input::placeholder {
-            color: #aaa;
             font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+            margin-bottom: 36px;
+            max-width: 520px;
         }
 
-        .c-searchGroup__button {
-            padding: 18px 32px;
-            background: #0073b1;
-            color: white;
-            border: none;
-            font-weight: 700;
-            font-size: 15px;
-            cursor: pointer;
-            transition: background 0.3s;
-            white-space: nowrap;
-        }
-
-        .c-searchGroup__button:hover {
-            background: #005a8c;
-        }
-
-        /* ====== GURU / FEATURES SECTION ====== */
-        .guru-section {
-            padding: 80px 8% 100px;
-            background: linear-gradient(145deg, #2b3247 0%, #1a2233 100%);
-            color: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .guru-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 115, 177, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .guru-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .guru-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .guru-header h2 {
-            font-size: 40px;
-            font-weight: 800;
-            letter-spacing: -1px;
-        }
-
-        .guru-header p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 18px;
-            max-width: 500px;
-            margin: 10px auto 0;
-        }
-
-        /* ====== CAROUSEL ====== */
-        .carousel-wrapper {
-            position: relative;
-            display: flex;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .carousel-track-container {
-            overflow: hidden;
-            width: 100%;
-            border-radius: 16px;
-        }
-
-        .carousel-track {
-            display: flex;
-            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            gap: 0;
-        }
-
-        .carousel-slide {
-            min-width: 100%;
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            padding: 40px 50px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .slide-text {
-            flex: 1;
-        }
-
-        .slide-text .badge {
-            display: inline-block;
-            background: rgba(0, 115, 177, 0.25);
+        .guru-hero-left p strong {
             color: #64b5f6;
+            font-weight: 600;
+        }
+
+        .guru-hero-actions {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .guru-hero-actions .btn-primary {
+            padding: 14px 36px;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .guru-hero-actions .btn-outline-light {
+            padding: 14px 36px;
+            font-size: 16px;
+            border-radius: 10px;
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .guru-hero-actions .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .guru-hero-right {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .guru-hero-card {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            padding: 40px 36px;
+            width: 100%;
+            max-width: 440px;
+        }
+
+        .guru-hero-card .stat {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .guru-hero-card .stat:last-child {
+            border-bottom: none;
+        }
+
+        .guru-hero-card .stat-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 102, 204, 0.2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .guru-hero-card .stat-text h4 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .guru-hero-card .stat-text p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 0;
+        }
+
+        /* ====== FEATURES / GURU SECTION ====== */
+        .guru-features {
+            padding: 100px 60px;
+            background: #f8fafc;
+        }
+
+        .guru-features-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .guru-features-header .badge {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #0066cc;
             padding: 4px 16px;
             border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             margin-bottom: 12px;
         }
 
-        .slide-text h3 {
+        .guru-features-header h2 {
+            font-size: 42px;
+            font-weight: 800;
+            color: #0a1a2b;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .guru-features-header p {
+            font-size: 18px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .guru-features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .guru-feature-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 40px 32px;
+            border: 1px solid #eef0f2;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .guru-feature-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+            border-color: #d1d5db;
+        }
+
+        .guru-feature-card .icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .guru-feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0a1a2b;
+            margin-bottom: 10px;
+        }
+
+        .guru-feature-card p {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .guru-feature-card .learn-more {
+            display: inline-block;
+            margin-top: 16px;
+            color: #0066cc;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .guru-feature-card .learn-more:hover {
+            text-decoration: underline;
+        }
+
+        /* ====== CAROUSEL - GURU.COM STYLE ====== */
+        .guru-carousel-section {
+            padding: 80px 60px 100px;
+            background: #ffffff;
+        }
+
+        .guru-carousel-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .guru-carousel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .guru-carousel-header h2 {
             font-size: 32px;
             font-weight: 800;
-            margin-bottom: 16px;
+            color: #0a1a2b;
+        }
+
+        .guru-carousel-header p {
+            color: #4a5568;
+            font-size: 16px;
+            max-width: 400px;
+        }
+
+        .guru-carousel-track-container {
+            overflow: hidden;
+            border-radius: 16px;
+        }
+
+        .guru-carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .guru-carousel-slide {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            padding: 50px 60px;
+            background: #f8fafc;
+            border-radius: 16px;
+            align-items: center;
+        }
+
+        .guru-slide-content .slide-badge {
+            display: inline-block;
+            background: #e8f0fe;
+            color: #0066cc;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            margin-bottom: 12px;
+        }
+
+        .guru-slide-content h3 {
+            font-size: 30px;
+            font-weight: 800;
+            color: #0a1a2b;
+            margin-bottom: 12px;
             letter-spacing: -0.5px;
         }
 
-        .slide-text p {
-            color: rgba(255, 255, 255, 0.8);
+        .guru-slide-content p {
             font-size: 17px;
+            color: #4a5568;
             line-height: 1.7;
             margin-bottom: 24px;
         }
 
-        .slide-text .btn-work {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+        .guru-slide-content .btn-secondary {
             padding: 12px 28px;
-            border-radius: 6px;
+            background: #0066cc;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
             font-weight: 600;
             font-size: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.15);
             cursor: pointer;
-            transition: all 0.3s;
-            display: inline-block;
+            transition: all 0.2s;
         }
 
-        .slide-text .btn-work:hover {
-            background: #0073b1;
-            border-color: #0073b1;
+        .guru-slide-content .btn-secondary:hover {
+            background: #0052a3;
             transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.25);
         }
 
-        .slide-image {
-            flex: 1;
+        .guru-slide-image {
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .slide-image .placeholder-img {
+        .guru-slide-image .img-placeholder {
             width: 100%;
             max-width: 380px;
-            height: 260px;
-            background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
+            height: 240px;
+            background: linear-gradient(145deg, #eef0f2, #e4e7eb);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
-            color: rgba(255, 255, 255, 0.3);
-            border: 2px dashed rgba(255, 255, 255, 0.08);
-            font-weight: 600;
+            font-size: 48px;
+            color: #9ca3af;
         }
 
-        /* ====== CAROUSEL ARROWS ====== */
-        .carousel-arrow {
+        /* Carousel Controls */
+        .guru-carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 32px;
+        }
+
+        .guru-carousel-arrow {
             width: 48px;
             height: 48px;
-            background: rgba(255, 255, 255, 0.08);
-            color: white;
             border-radius: 50%;
+            border: 1.5px solid #d1d5db;
+            background: #ffffff;
+            color: #1a1a2e;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            font-size: 22px;
-            font-weight: 300;
-            transition: all 0.3s;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            flex-shrink: 0;
-            user-select: none;
         }
 
-        .carousel-arrow:hover {
-            background: rgba(0, 115, 177, 0.4);
-            border-color: #0073b1;
-            transform: scale(1.05);
+        .guru-carousel-arrow:hover {
+            border-color: #0066cc;
+            color: #0066cc;
+            background: #f0f7ff;
         }
 
-        .carousel-arrow:active {
-            transform: scale(0.95);
-        }
-
-        /* ====== CAROUSEL DOTS ====== */
-        .carousel-dots {
+        .guru-carousel-dots {
             display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 40px;
+            gap: 8px;
         }
 
-        .dot {
-            width: 10px;
-            height: 10px;
+        .guru-dot {
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
+            background: #d1d5db;
+            border: none;
             cursor: pointer;
             transition: all 0.3s;
-            border: none;
+            padding: 0;
         }
 
-        .dot.active {
-            background: #0073b1;
-            width: 28px;
-            border-radius: 6px;
+        .guru-dot.active {
+            background: #0066cc;
+            width: 32px;
+            border-radius: 4px;
         }
 
-        .dot:hover {
-            background: rgba(255, 255, 255, 0.4);
+        /* ====== FOOTER ====== */
+        .guru-footer {
+            background: #0a1a2b;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 60px 60px 40px;
         }
 
-        /* ====== RESPONSIVE DESIGN ====== */
-        @media (max-width: 992px) {
-            .nav-links {
-                gap: 20px;
-            }
+        .guru-footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
 
-            .c-hero__title {
-                font-size: 42px;
-            }
+        .guru-footer h4 {
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
 
-            .slide-text h3 {
-                font-size: 26px;
-            }
+        .guru-footer p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
 
-            .carousel-slide {
-                flex-direction: column;
+        .guru-footer a {
+            display: block;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 8px;
+            transition: color 0.2s;
+        }
+
+        .guru-footer a:hover {
+            color: #ffffff;
+        }
+
+        .guru-footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            text-align: center;
+            font-size: 13px;
+        }
+
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 1024px) {
+            .guru-hero-content {
+                grid-template-columns: 1fr;
                 text-align: center;
-                padding: 30px;
-                gap: 30px;
             }
 
-            .slide-image .placeholder-img {
+            .guru-hero-left p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .guru-hero-actions {
+                justify-content: center;
+            }
+
+            .guru-hero-card {
                 max-width: 100%;
-                height: 200px;
+            }
+
+            .guru-features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guru-carousel-slide {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 36px 30px;
+            }
+
+            .guru-slide-image .img-placeholder {
+                max-width: 100%;
+            }
+
+            .guru-footer-content {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 30px 8%;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-                gap: 20px;
-                border-top: 1px solid #eee;
-            }
-
-            .nav-links.open {
-                display: flex;
-            }
-
-            .nav-buttons .btn-login {
-                display: none;
-            }
-
-            .header-nav {
-                padding: 14px 5%;
-            }
-
-            .hero-section {
-                padding: 70px 5% 90px;
-                min-height: auto;
-            }
-
-            .c-hero__title {
-                font-size: 32px;
-            }
-
-            .c-hero__copy {
-                font-size: 17px;
-            }
-
-            .c-searchGroup {
-                flex-direction: column;
-                max-width: 100%;
-                background: transparent;
-                box-shadow: none;
+            .guru-header {
+                padding: 12px 20px;
+                flex-wrap: wrap;
                 gap: 12px;
             }
 
-            .c-searchGroup__input {
-                border-radius: 8px;
-                padding: 16px 20px;
-                background: white;
+            .guru-nav {
+                display: none;
             }
 
-            .c-searchGroup__button {
-                border-radius: 8px;
+            .guru-nav-right .btn-outline {
+                display: none;
+            }
+
+            .guru-hero {
+                padding: 50px 20px 70px;
+            }
+
+            .guru-hero-left h1 {
+                font-size: 36px;
+            }
+
+            .guru-hero-left p {
+                font-size: 17px;
+            }
+
+            .guru-hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .guru-hero-actions .btn-primary,
+            .guru-hero-actions .btn-outline-light {
+                width: 100%;
                 text-align: center;
-                padding: 16px;
             }
 
-            .guru-section {
-                padding: 60px 5% 80px;
+            .guru-features {
+                padding: 60px 20px;
             }
 
-            .guru-header h2 {
+            .guru-features-header h2 {
                 font-size: 30px;
             }
 
-            .carousel-wrapper {
+            .guru-features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guru-carousel-section {
+                padding: 50px 20px 70px;
+            }
+
+            .guru-carousel-header {
                 flex-direction: column;
-                gap: 16px;
+                align-items: flex-start;
             }
 
-            .carousel-arrow {
-                width: 40px;
-                height: 40px;
-                font-size: 18px;
+            .guru-carousel-slide {
+                padding: 24px 20px;
             }
 
-            .carousel-slide {
-                padding: 24px;
-                gap: 20px;
+            .guru-slide-content h3 {
+                font-size: 24px;
             }
 
-            .slide-text h3 {
-                font-size: 22px;
+            .guru-footer {
+                padding: 40px 20px 30px;
             }
 
-            .slide-image .placeholder-img {
-                height: 160px;
+            .guru-footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 22px;
+            .guru-hero-left h1 {
+                font-size: 28px;
             }
 
-            .c-hero__title {
-                font-size: 26px;
-            }
-
-            .c-hero__copy {
-                font-size: 15px;
-            }
-
-            .btn-cta {
-                padding: 10px 20px;
-                font-size: 13px;
-            }
-
-            .guru-header h2 {
+            .guru-features-header h2 {
                 font-size: 24px;
             }
 
-            .slide-text h3 {
-                font-size: 19px;
+            .guru-carousel-slide {
+                padding: 20px 16px;
             }
 
-            .carousel-slide {
-                padding: 18px;
+            .guru-slide-content h3 {
+                font-size: 20px;
+            }
+
+            .guru-slide-image .img-placeholder {
+                height: 160px;
+                font-size: 32px;
             }
         }
     </style>
 </head>
-
 <body>
 
-    <!-- ====== HEADER ====== -->
-    <header class="header-nav">
-        <div class="logo">✦ Click Aura</div>
+    <!-- ====== HEADER - GURU.COM STYLE ====== -->
+    <header class="guru-header">
+        <div class="guru-logo">Click <span>Aura</span></div>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <nav class="guru-nav">
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
 
-        <div class="nav-buttons">
-            <a href="#login" class="btn-login">Login</a>
-            <a href="#quote" class="btn-cta">Get a Quote</a>
-            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <div class="guru-nav-right">
+            <a href="#" class="btn-outline">Log In</a>
+            <a href="#" class="btn-primary">Get a Quote</a>
         </div>
     </header>
 
-    <!-- ====== HERO SECTION ====== -->
-    <section class="hero-section">
-        <div class="c-hero__main">
-            <div class="c-hero__headings">
-                <h1 class="c-hero__title">
+    <!-- ====== HERO - GURU.COM STYLE ====== -->
+    <section class="guru-hero">
+        <div class="guru-hero-content">
+            <div class="guru-hero-left">
+                <h1>
                     YOUR BRAND<br />
-                    DESERVES AN <span>AURA</span>
+                    DESERVES AN <span class="highlight">AURA</span>
                 </h1>
-                <p class="c-hero__copy">
+                <p>
                     I'm <strong>Fatima Altaf</strong> — I turn social media chaos into a
                     growth engine that attracts, engages, and converts without the fluff.
                 </p>
+                <div class="guru-hero-actions">
+                    <a href="#" class="btn-primary">Show My Work</a>
+                    <a href="#" class="btn-outline-light">Watch Video</a>
+                </div>
             </div>
 
-            <div class="c-searchGroup">
-                <input type="text" class="c-searchGroup__input" placeholder="Let's Build Your Aura" />
-                <button class="c-searchGroup__button">Show My Work</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== GURU / CAROUSEL SECTION ====== -->
-    <section class="guru-section" id="services">
-        <div class="guru-container">
-            <div class="guru-header">
-                <h2>✨ What I Do Best</h2>
-                <p>Strategies that turn followers into loyal customers.</p>
-            </div>
-
-            <div class="carousel-wrapper">
-                <!-- Left Arrow -->
-                <div class="carousel-arrow" id="prevBtn">‹</div>
-
-                <!-- Carousel Track -->
-                <div class="carousel-track-container">
-                    <div class="carousel-track" id="carouselTrack">
-
-                        <!-- SLIDE 1 -->
-                        <div class="carousel-slide">
-                            <div class="slide-text">
-                                <span class="badge">✦ Social Media Strategy</span>
-                                <h3>Growth Engine Blueprint</h3>
-                                <p>
-                                    A data-driven roadmap to grow your audience, boost engagement,
-                                    and turn followers into paying clients — without burnout.
-                                </p>
-                                <button class="btn-work">Learn More →</button>
-                            </div>
-                            <div class="slide-image">
-                                <div class="placeholder-img">📊 Strategy</div>
-                            </div>
+            <div class="guru-hero-right">
+                <div class="guru-hero-card">
+                    <div class="stat">
+                        <div class="stat-icon">📈</div>
+                        <div class="stat-text">
+                            <h4>300%+ Growth</h4>
+                            <p>Average client engagement increase</p>
                         </div>
-
-                        <!-- SLIDE 2 -->
-                        <div class="carousel-slide">
-                            <div class="slide-text">
-                                <span class="badge">✦ Content Creation</span>
-                                <h3>Magnetic Content Lab</h3>
-                                <p>
-                                    High-impact posts, reels, and stories designed to stop the
-                                    scroll and make your brand unforgettable.
-                                </p>
-                                <button class="btn-work">Explore →</button>
-                            </div>
-                            <div class="slide-image">
-                                <div class="placeholder-img">🎨 Content</div>
-                            </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-text">
+                            <h4>50+ Projects</h4>
+                            <p>Completed for happy clients</p>
                         </div>
-
-                        <!-- SLIDE 3 -->
-                        <div class="carousel-slide">
-                            <div class="slide-text">
-                                <span class="badge">✦ Brand Identity</span>
-                                <h3>Your Signature Aura</h3>
-                                <p>
-                                    From visual identity to voice — we craft a cohesive brand
-                                    presence that resonates with your ideal audience.
-                                </p>
-                                <button class="btn-work">See More →</button>
-                            </div>
-                            <div class="slide-image">
-                                <div class="placeholder-img">🌟 Brand</div>
-                            </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-icon">🌟</div>
+                        <div class="stat-text">
+                            <h4>4.9/5 Rating</h4>
+                            <p>From client reviews</p>
                         </div>
-
                     </div>
                 </div>
-
-                <!-- Right Arrow -->
-                <div class="carousel-arrow" id="nextBtn">›</div>
             </div>
-
-            <!-- Dots -->
-            <div class="carousel-dots" id="dotsContainer"></div>
         </div>
     </section>
+
+    <!-- ====== FEATURES ====== -->
+    <section class="guru-features">
+        <div class="guru-features-header">
+            <span class="badge">✦ What I Do</span>
+            <h2>Build Your Brand's <br />Digital Aura</h2>
+            <p>Strategies that turn followers into loyal customers and brands into movements.</p>
+        </div>
+
+        <div class="guru-features-grid">
+            <div class="guru-feature-card">
+                <div class="icon">📊</div>
+                <h3>Social Media Strategy</h3>
+                <p>Data-driven roadmaps to grow your audience, boost engagement, and convert followers into clients.</p>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+
+            <div class="guru-feature-card">
+                <div class="icon">🎨</div>
+                <h3>Content Creation</h3>
+                <p>High-impact posts, reels, and stories designed to stop the scroll and make your brand unforgettable.</p>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+
+            <div class="guru-feature-card">
+                <div class="icon">✨</div>
+                <h3>Brand Identity</h3>
+                <p>From visual identity to voice — craft a cohesive brand presence that resonates with your audience.</p>
+                <a href="#" class="learn-more">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CAROUSEL - GURU.COM STYLE ====== -->
+    <section class="guru-carousel-section">
+        <div class="guru-carousel-wrapper">
+            <div class="guru-carousel-header">
+                <div>
+                    <h2>Featured Work</h2>
+                    <p>See how I've helped brands build their aura</p>
+                </div>
+            </div>
+
+            <div class="guru-carousel-track-container">
+                <div class="guru-carousel-track" id="guruTrack">
+
+                    <!-- SLIDE 1 -->
+                    <div class="guru-carousel-slide">
+                        <div class="guru-slide-content">
+                            <span class="slide-badge">✦ Case Study</span>
+                            <h3>From 0 to 50K in 6 Months</h3>
+                            <p>How we built a massive following for a wellness brand using authentic storytelling and data-driven content strategy.</p>
+                            <button class="btn-secondary">Read Case Study →</button>
+                        </div>
+                        <div class="guru-slide-image">
+                            <div class="img-placeholder">📈</div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 2 -->
+                    <div class="guru-carousel-slide">
+                        <div class="guru-slide-content">
+                            <span class="slide-badge">✦ Case Study</span>
+                            <h3>Viral Campaign that Generated $200K+</h3>
+                            <p>One campaign. 5 million views. Hundreds of leads. Discover the strategy behind our most viral success.</p>
+                            <button class="btn-secondary">Read Case Study →</button>
+                        </div>
+                        <div class="guru-slide-image">
+                            <div class="img-placeholder">🚀</div>
+                        </div>
+                    </div>
+
+                    <!-- SLIDE 3 -->
+                    <div class="guru-carousel-slide">
+                        <div class="guru-slide-content">
+                            <span class="slide-badge">✦ Case Study</span>
+                            <h3>Brand Transformation in 30 Days</h3>
+                            <p>Complete rebrand and social overhaul for an e-commerce store, resulting in 3x revenue growth.</p>
+                            <button class="btn-secondary">Read Case Study →</button>
+                        </div>
+                        <div class="guru-slide-image">
+                            <div class="img-placeholder">✨</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <div class="guru-carousel-controls">
+                <button class="guru-carousel-arrow" id="guruPrev">‹</button>
+                <div class="guru-carousel-dots" id="guruDots"></div>
+                <button class="guru-carousel-arrow" id="guruNext">›</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="guru-footer">
+        <div class="guru-footer-content">
+            <div>
+                <h4 style="font-size:20px; color:#ffffff;">Click Aura</h4>
+                <p style="margin-top:8px;">Building brands that attract, engage, and convert.</p>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Portfolio</a>
+            </div>
+            <div>
+                <h4>Support</h4>
+                <a href="#">Contact</a>
+                <a href="#">FAQ</a>
+                <a href="#">Blog</a>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+        <div class="guru-footer-bottom">
+            © 2026 Click Aura. All rights reserved.
+        </div>
+    </footer>
 
     <!-- ====== JAVASCRIPT ====== -->
     <script>
-        // ====== MOBILE MENU ======
-        function toggleMenu() {
-            const nav = document.getElementById('navLinks');
-            nav.classList.toggle('open');
-        }
-
-        // Close menu on link click (mobile)
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navLinks').classList.remove('open');
-            });
-        });
-
         // ====== CAROUSEL ======
-        const track = document.getElementById('carouselTrack');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const dotsContainer = document.getElementById('dotsContainer');
+        const track = document.getElementById('guruTrack');
+        const slides = document.querySelectorAll('.guru-carousel-slide');
+        const prevBtn = document.getElementById('guruPrev');
+        const nextBtn = document.getElementById('guruNext');
+        const dotsContainer = document.getElementById('guruDots');
 
         let currentIndex = 0;
         const totalSlides = slides.length;
@@ -735,14 +934,14 @@
         // Create dots
         for (let i = 0; i < totalSlides; i++) {
             const dot = document.createElement('button');
-            dot.classList.add('dot');
+            dot.classList.add('guru-dot');
             if (i === 0) dot.classList.add('active');
             dot.dataset.index = i;
             dot.addEventListener('click', () => goToSlide(i));
             dotsContainer.appendChild(dot);
         }
 
-        const dots = document.querySelectorAll('.dot');
+        const dots = document.querySelectorAll('.guru-dot');
 
         function updateCarousel() {
             track.style.transform = `translateX(-${currentIndex * 100}%)`;
@@ -769,24 +968,20 @@
         prevBtn.addEventListener('click', prevSlide);
         nextBtn.addEventListener('click', nextSlide);
 
-        // Auto-play (optional)
-        let autoPlay = setInterval(nextSlide, 6000);
-
-        // Pause auto-play on hover
-        const carouselWrapper = document.querySelector('.carousel-wrapper');
-        carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoPlay));
-        carouselWrapper.addEventListener('mouseleave', () => {
-            autoPlay = setInterval(nextSlide, 6000);
+        // Auto-play
+        let autoPlay = setInterval(nextSlide, 5000);
+        const wrapper = document.querySelector('.guru-carousel-wrapper');
+        wrapper.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        wrapper.addEventListener('mouseleave', () => {
+            autoPlay = setInterval(nextSlide, 5000);
         });
 
-        // Touch/Swipe support
+        // Touch support
         let touchStartX = 0;
         let touchEndX = 0;
-
         track.addEventListener('touchstart', (e) => {
             touchStartX = e.changedTouches[0].screenX;
         });
-
         track.addEventListener('touchend', (e) => {
             touchEndX = e.changedTouches[0].screenX;
             const diff = touchStartX - touchEndX;
@@ -796,41 +991,12 @@
             }
         });
 
-        // Keyboard support
+        // Keyboard
         document.addEventListener('keydown', (e) => {
             if (e.key === 'ArrowRight') nextSlide();
             if (e.key === 'ArrowLeft') prevSlide();
-        });
-
-        // ====== SEARCH BUTTON ======
-        document.querySelector('.c-searchGroup__button').addEventListener('click', function() {
-            const input = document.querySelector('.c-searchGroup__input');
-            const query = input.value.trim();
-            if (query) {
-                alert('✨ Thanks! We\'ll build your aura around: "' + query + '"');
-            } else {
-                alert('💡 Tell us what you need — let\'s build your aura together!');
-            }
-        });
-
-        // Enter key on search input
-        document.querySelector('.c-searchGroup__input').addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') {
-                document.querySelector('.c-searchGroup__button').click();
-            }
-        });
-
-        // ====== "WORK" BUTTONS IN CAROUSEL ======
-        document.querySelectorAll('.btn-work').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                const text = this.closest('.slide-text').querySelector('h3').textContent;
-                alert('🚀 Let\'s work on: ' + text);
-            });
         });
     </script>
 
 </body>
 </html>
-
-
