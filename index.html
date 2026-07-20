@@ -1,284 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></strong>Click Aura</strong> - Website</title>
+I am your client, and this is my dream website project: **Click Aura**.
 
-    <!-- ====== STYLE 1: HEADER NAV CSS ====== -->
-    <style>
-        /* Header Container Styling */
-        .header-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 5px 8%; /* Adjusted spacing for the top */
-            background-color: #ffffff;
-            border-bottom: 1px solid #e0e0e0;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
+**Project Goal:**
+Create a modern, professional, and visually striking brand website for "Click Aura." The website should establish a strong online presence, clearly communicate the brand's value proposition, and encourage user engagement.
 
-        /* Brand Logo Area */
-        .logo {
-            font-size: 26px;
-            font-weight: 700;
-            color: #2b3247; /* Professional Dark Navy */
-            letter-spacing: -0.5px;
-            margin-left: 30px;
-        }
+**Core Brand & Design Details:**
+- **Brand Name:** Click Aura
+- **Tagline:** "YOUR BRAND DESERVES AN AURA"
+- **Founder/Main Personality:** Fatima Altaf. The copy should reflect her voice: "I turn social media chaos into a growth engine that attracts, engages, and converts without the fluff."
+- **Primary Color Palette:** A professional and sophisticated scheme.
+    - **Navy Blue:** (#2b3247, #1a2233, #2c3e50) for headers, backgrounds, and a trustworthy feel.
+    - **White:** (#ffffff) for clean text and backgrounds.
+    - **Accent/CTA Blue:** (#0073b1) for buttons and interactive elements.
+    - **Subtle Gray:** (#e0e0e0, #4a4a4a) for borders and secondary text.
 
-        /* Navigation Links */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 35px; /* Spacing between menu items */
-        }
+**Website Structure & Key Elements:**
 
-        .nav-links li a {
-            text-decoration: none;
-            color: #4a4a4a;
-            font-weight: 700;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
+1.  **Header Navigation:**
+    - **Logo:** "Click Aura" (bold, modern font).
+    - **Nav Links:** Services, Portfolio, About Me, Contact.
+    - **Right Side Buttons:** "Login" (text link) and "Get a Quote" (solid blue CTA button).
 
-        .nav-links li a:hover {
-            color: #0073b1; /* Hover effect */
-        }
+2.  **Hero Section:**
+    - **Background:** Solid dark navy/blue (#2c3e50).
+    - **Headline:** "YOUR BRAND DESERVES AN AURA" (large, bold, white text).
+    - **Sub-text/Intro:** "I'm **Fatima Altaf** I turn social media chaos into a growth engine that attracts, engages, and converts without the fluff."
+    - **Search/Action Bar:** A white search box with the placeholder "Lets Build Your Aura" and a "show my work" button.
 
-        /* Buttons Area */
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-        }
+3.  **"Guru" Section (Main Content Area):**
+    - **Background:** A gradient from dark navy (#2b3247) to a darker shade (#1a2233).
+    - **Layout:** This section should contain a carousel or a visually rich display area.
+    - **Carousel Controls:** Include left (`‹`) and right (`›`) arrow buttons positioned on the sides to allow users to navigate through content.
+    - **Content Area:** This is where the main "Guru" or featured content will be displayed (text, images, or services).
+    - An image container on the right side of this section for a hero image.
 
-        .btn-cta {
-            background-color: #0073b1; /* Professional blue matching your theme */
-            color: #ffffff;
-            padding: 10px 22px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-        }
+**Instructions for the Developer:**
+- My existing HTML code provides the basic structure, styling, and layout. Please use it as a starting point.
+- The design needs to be fully responsive, clean, and professional.
+- Pay close attention to the spacing, typography, and color matching to ensure a premium look.
+- The carousel arrows are a key functional element; they must work to slide the content.
+- The overall feel should be of a modern, high-end brand website that builds trust and encourages users to take action (like clicking "Get a Quote" or "show my work").
 
-        .btn-login {
-            color: #333;
-            text-decoration: none;
-            padding: 10px;
-            font-weight: 700;
-        }
-    </style>
-
-    <!-- ====== STYLE 2: HERO SECTION CSS ====== -->
-    <style>
-        /* Spacing and Layout CSS */
-        .hero-section {
-            padding: 80px 40px; /* Top/Bottom padding for the hero area */
-            background-color: #2c3e50; /* Background color matching the image */
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-        }
-
-        .c-hero__main {
-            max-width: 1200px;
-            margin: 0 auto; /* Keeps content centered */
-            width: 100%;
-        }
-
-        .c-hero__headings {
-            margin-bottom: 30px; /* Spacing between text and search box */
-        }
-
-        .c-hero__title {
-            font-size: 36px;
-            line-height: 1.1;
-            margin-bottom: 20px; /* Margin under the main title */
-            font-weight: 700;
-        }
-
-        .c-hero__subTitle {
-            margin: 0 0 20px 0;
-            font-weight: 400;
-            opacity: 0.9;
-        }
-
-        .c-hero__copy {
-            font-size: 18px;
-            margin-bottom: 40px; /* Spacing before the search input */
-            line-height: 1.6;
-            max-width: 600px;
-        }
-
-        /* Search Box Spacing */
-        .c-searchGroup {
-            display: flex;
-            gap: 15px; /* Spacing between input and button */
-            margin-bottom: 25px; /* Margin below the search/action bar */
-            background: white;
-            padding: 5px;
-            border-radius: 4px;
-            max-width: 400px;
-        }
-
-        .c-searchGroup__input {
-            flex: 1;
-            padding: 15px 20px; /* Internal padding of input field */
-            border: none;
-            font-size: 16px;
-        }
-
-        .c-searchGroup__button {
-            padding: 11px 27px /* Button sizing */
-            cursor: pointer;
-        }
-    </style>
-
-    <!-- ====== STYLE 3: GURU SECTION + CAROUSEL ARROWS CSS ====== -->
-    <style>
-        .guru-exact-bg {
-            width: 100%;
-            min-height: 500px;
-            position: relative;
-            background: #2b3247;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Content ko center karne ke liye */
-            padding: 60px 80px;
-            gap: 20px;
-        }
-
-        /* CAROUSEL ARROWS KA STYLE */
-        .carousel-arrow {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background: rgba(0, 0, 0, 0.3); /* Transparent dark background */
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 20px;
-            z-index: 10;
-            transition: background 0.3s;
-        }
-
-        .carousel-arrow:hover {
-            background: rgba(0, 0, 0, 0.6); /* Hover par dark ho jayega */
-        }
-
-        .left-arrow { left: 20px; }
-        .right-arrow { right: 20px; }
-
-        /* Baki purana CSS yahan aayega... */
-        .guru-exact-bg::before { /* ... */ }
-        /* ... */
-<style>
-    .btn-work {
-        padding: 6px 15px;
-        font-size: 12px;
-        max-width: 150px;
-    }
-</style>
-    <style>
-    /* ... aapka purana CSS ... */
-
-    .guru-exact-bg {
-        width: 100%;
-        min-height: 500px;
-        position: relative;
-        background: #2b3247;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 60px 80px;
-        gap: 20px;
-    }
-
-    /* CAROUSEL ARROWS KA STYLE */
-    .carousel-arrow { ... }
-    .left-arrow { ... }
-    .right-arrow { ... }
-
-    /* 🔽 YAHAN PASTE KAREIN 🔽 */
-    .clean-background {
-        width: 100%;
-        height: 100vh;
-        background: linear-gradient(135deg, #2b3247 0%, #1a2233 100%);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-</style>
-        
-    </style>
-</head>
-
-<body>
-
-    <!-- ====== HEADER (NAVIGATION) ====== -->
-    <header class="header-nav">
-        <!-- Brand Name -->
-        <div class="logo">Click Aura</div>
-
-        <!-- Main Navigation -->
-        <ul class="nav-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-
-        <!-- Right Side CTA -->
-        <div class="nav-buttons">
-            <a href="#login" class="btn-login">Login</a>
-            <a href="#quote" class="btn-cta">Get a Quote</a>
-        </div>
-    </header>
-
-    <!-- ====== HERO SECTION ====== -->
-    <section class="hero-section">
-        <div class="c-hero__main">
-            <div class="c-hero__headings">
-                <h1 class="c-hero__title">YOUR BRAND <br />
- DESERVE AN AURA
-</h1>
-                <h2 class="c-hero__subTitle"></h2>
-                <p class="c-hero__copy">I'm <strong>Fatima Altaf</strong> I turn social media chaos into a growth engine that attracts,engages, and converts without the fluff.</p>
-            </div>
-
-            <!-- Search Box -->
-            <div class="c-searchGroup">
-                <input type="text" class="c-searchGroup__input" placeholder="Lets Bulid Your Aura">
-                <button class="c-searchGroup__button btn-cta">show my work</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== GURU SECTION WITH CAROUSEL ARROWS ====== -->
-    <section class="guru-exact-bg">
-        <!-- Carousel Arrows -->
-        <div class="carousel-arrow left-arrow">&#8249;</div>
-        <div class="carousel-arrow right-arrow">&#8250;</div>
-
-        <!-- Content -->
-        <div class="content">
-            <!-- Text and Search Bar here -->
-        </div>
-
-        <!-- Image wrapper -->
-        <div class="hero-image-wrapper">
-            <!-- Image here -->
-        </div>
-    </section>
-
-</body>
-</html>
+**Reference Code (My current draft):**
