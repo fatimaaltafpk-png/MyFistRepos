@@ -1,208 +1,242 @@
-<style>
-    /* Header Container Styling */
-    .header-nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 15px 8%; /* Adjusted spacing for the top */
-        background-color: #ffffff;
-        border-bottom: 1px solid #e0e0e0;
-        font-family: 'Segoe UI', Arial, sans-serif;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click Aura - Website</title>
 
-    /* Brand Logo Area */
-    .logo {
-        font-size: 26px;
-        font-weight: 700;
-        color: #2b3247; /* Professional Dark Navy */
-        letter-spacing: -0.5px;
-    }
+    <!-- ====== STYLE 1: HEADER NAV CSS ====== -->
+    <style>
+        /* Header Container Styling */
+        .header-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 8%; /* Adjusted spacing for the top */
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
 
-    /* Navigation Links */
-    .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 35px; /* Spacing between menu items */
-    }
+        /* Brand Logo Area */
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: #2b3247; /* Professional Dark Navy */
+            letter-spacing: -0.5px;
+        }
 
-    .nav-links li a {
-        text-decoration: none;
-        color: #4a4a4a;
-        font-weight: 500;
-        font-size: 16px;
-        transition: color 0.3s ease;
-    }
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px; /* Spacing between menu items */
+        }
 
-    .nav-links li a:hover {
-        color: #0073b1; /* Hover effect */
-    }
+        .nav-links li a {
+            text-decoration: none;
+            color: #4a4a4a;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
 
-    /* Buttons Area */
-    .nav-buttons {
-        display: flex;
-        gap: 15px;
-    }
+        .nav-links li a:hover {
+            color: #0073b1; /* Hover effect */
+        }
 
-    .btn-cta {
-        background-color: #0073b1; /* Professional blue matching your theme */
-        color: #ffffff;
-        padding: 10px 22px;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: 600;
-        border: none;
-        cursor: pointer;
-    }
+        /* Buttons Area */
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
 
-    .btn-login {
-        color: #333;
-        text-decoration: none;
-        padding: 10px;
-        font-weight: 500;
-    }
-</style>
+        .btn-cta {
+            background-color: #0073b1; /* Professional blue matching your theme */
+            color: #ffffff;
+            padding: 10px 22px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+        }
 
-</style>
+        .btn-login {
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 500;
+        }
+    </style>
 
-<header class="header-nav">
-    <!-- Brand Name -->
-    <div class="logo">Click Aura</div>
+    <!-- ====== STYLE 2: HERO SECTION CSS ====== -->
+    <style>
+        /* Spacing and Layout CSS */
+        .hero-section {
+            padding: 80px 40px; /* Top/Bottom padding for the hero area */
+            background-color: #2c3e50; /* Background color matching the image */
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+        }
 
-    <!-- Main Navigation -->
-    <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+        .c-hero__main {
+            max-width: 1200px;
+            margin: 0 auto; /* Keeps content centered */
+            width: 100%;
+        }
 
-    <!-- Right Side CTA -->
-    <div class="nav-buttons">
-        <a href="#login" class="btn-login">Login</a>
-        <a href="#quote" class="btn-cta">Get a Quote</a>
-    </div>
-</header>
-</style>
+        .c-hero__headings {
+            margin-bottom: 30px; /* Spacing between text and search box */
+        }
 
-    /* Spacing and Layout CSS */
-    .hero-section {
-        padding: 80px 40px; /* Top/Bottom padding for the hero area */
-        background-color: #2c3e50; /* Background color matching the image */
-        color: #ffffff;
-        display: flex;
-        align-items: center;
-    }
+        .c-hero__title {
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 20px; /* Margin under the main title */
+            font-weight: 700;
+        }
 
-    .c-hero__main {
-        max-width: 1200px;
-        margin: 0 auto; /* Keeps content centered */
-        width: 100%;
-    }
+        .c-hero__subTitle {
+            margin: 0 0 20px 0;
+            font-weight: 400;
+            opacity: 0.9;
+        }
 
-    .c-hero__headings {
-        margin-bottom: 30px; /* Spacing between text and search box */
-    }
+        .c-hero__copy {
+            font-size: 18px;
+            margin-bottom: 40px; /* Spacing before the search input */
+            line-height: 1.6;
+            max-width: 600px;
+        }
 
-    .c-hero__title {
-        font-size: 52px;
-        line-height: 1.1;
-        margin-bottom: 20px; /* Margin under the main title */
-        font-weight: 700;
-    }
+        /* Search Box Spacing */
+        .c-searchGroup {
+            display: flex;
+            gap: 15px; /* Spacing between input and button */
+            margin-bottom: 25px; /* Margin below the search/action bar */
+            background: white;
+            padding: 5px;
+            border-radius: 4px;
+            max-width: 800px;
+        }
 
-    .c-hero__subTitle {
-        margin: 0 0 20px 0;
-        font-weight: 400;
-        opacity: 0.9;
-    }
+        .c-searchGroup__input {
+            flex: 1;
+            padding: 15px 20px; /* Internal padding of input field */
+            border: none;
+            font-size: 16px;
+        }
 
-    .c-hero__copy {
-        font-size: 18px;
-        margin-bottom: 40px; /* Spacing before the search input */
-        line-height: 1.6;
-        max-width: 600px;
-    }
+        .c-searchGroup__button {
+            padding: 10px 30px; /* Button sizing */
+            cursor: pointer;
+        }
+    </style>
 
-    /* Search Box Spacing */
-    .c-searchGroup {
-        display: flex;
-        gap: 15px; /* Spacing between input and button */
-        margin-bottom: 25px; /* Margin below the search/action bar */
-        background: white;
-        padding: 5px;
-        border-radius: 4px;
-        max-width: 800px;
-    }
+    <!-- ====== STYLE 3: GURU SECTION + CAROUSEL ARROWS CSS ====== -->
+    <style>
+        .guru-exact-bg {
+            width: 100%;
+            min-height: 500px;
+            position: relative;
+            background: #2b3247;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Content ko center karne ke liye */
+            padding: 60px 80px;
+            gap: 20px;
+        }
 
-    .c-searchGroup__input {
-        flex: 1;
-        padding: 15px 20px; /* Internal padding of input field */
-        border: none;
-        font-size: 16px;
-    }
+        /* CAROUSEL ARROWS KA STYLE */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 0, 0, 0.3); /* Transparent dark background */
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 10;
+            transition: background 0.3s;
+        }
 
-    .c-searchGroup__button {
-        padding: 10px 30px; /* Button sizing */
-        cursor: pointer;
-    }
-<style>
-   
-    .guru-exact-bg {
-        width: 100%;
-        min-height: 500px;
-        position: relative;
-        background: #2b3247;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center; /* Content ko center karne ke liye */
-        padding: 60px 80px;
-        gap: 20px;
-    }
+        .carousel-arrow:hover {
+            background: rgba(0, 0, 0, 0.6); /* Hover par dark ho jayega */
+        }
 
-    /* CAROUSEL ARROWS KA STYLE */
-    .carousel-arrow {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 40px;
-        height: 40px;
-        background: rgba(0, 0, 0, 0.3); /* Transparent dark background */
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        font-size: 20px;
-        z-index: 10;
-        transition: background 0.3s;
-    }
+        .left-arrow { left: 20px; }
+        .right-arrow { right: 20px; }
 
-    .carousel-arrow:hover {
-        background: rgba(0, 0, 0, 0.6); /* Hover par dark ho jayega */
-    }
+        /* Baki purana CSS yahan aayega... */
+        .guru-exact-bg::before { /* ... */ }
+        /* ... */
+    </style>
+</head>
 
-    .left-arrow { left: 20px; }
-    .right-arrow { right: 20px; }
+<body>
 
-    /* Baki purana CSS yahan aayega... */
-    .guru-exact-bg::before { /* ... */ }
-    /* ... */
-</style>
+    <!-- ====== HEADER (NAVIGATION) ====== -->
+    <header class="header-nav">
+        <!-- Brand Name -->
+        <div class="logo">Click Aura</div>
 
-<section class="guru-exact-bg">
-    <!-- Naye Arrows -->
-    <div class="carousel-arrow left-arrow">&#8249;</div>
-    <div class="carousel-arrow right-arrow">&#8250;</div>
+        <!-- Main Navigation -->
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
 
-    <!-- Aapka baaki content yahan rahega -->
-    <div class="content">
-        <!-- Text and Search Bar here -->
-    </div>
+        <!-- Right Side CTA -->
+        <div class="nav-buttons">
+            <a href="#login" class="btn-login">Login</a>
+            <a href="#quote" class="btn-cta">Get a Quote</a>
+        </div>
+    </header>
 
-    <!-- Image wrapper -->
-    <div class="hero-image-wrapper">
-        <!-- Image here -->
-    </div>
-</section>
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero-section">
+        <div class="c-hero__main">
+            <div class="c-hero__headings">
+                <h1 class="c-hero__title">Welcome to Click Aura</h1>
+                <h2 class="c-hero__subTitle">Your Digital Partner</h2>
+                <p class="c-hero__copy">We help you grow your business with creative solutions.</p>
+            </div>
+
+            <!-- Search Box -->
+            <div class="c-searchGroup">
+                <input type="text" class="c-searchGroup__input" placeholder="Search for services...">
+                <button class="c-searchGroup__button btn-cta">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== GURU SECTION WITH CAROUSEL ARROWS ====== -->
+    <section class="guru-exact-bg">
+        <!-- Carousel Arrows -->
+        <div class="carousel-arrow left-arrow">&#8249;</div>
+        <div class="carousel-arrow right-arrow">&#8250;</div>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Text and Search Bar here -->
+        </div>
+
+        <!-- Image wrapper -->
+        <div class="hero-image-wrapper">
+            <!-- Image here -->
+        </div>
+    </section>
+
+</body>
+</html>
